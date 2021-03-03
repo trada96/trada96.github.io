@@ -1,0 +1,831 @@
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.9.0">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2021-03-03T11:22:37+07:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">Tuan Anh</title><subtitle>AI Engineer/ Data Scientist</subtitle><entry><title type="html">Các metric cơ bản thường dùng trong Machine Learning/ Deep Learning</title><link href="http://localhost:4000/metrics/" rel="alternate" type="text/html" title="Các metric cơ bản thường dùng trong Machine Learning/ Deep Learning" /><published>2021-02-18T00:00:00+07:00</published><updated>2021-02-18T00:00:00+07:00</updated><id>http://localhost:4000/metrics</id><content type="html" xml:base="http://localhost:4000/metrics/">&lt;p&gt;Nếu bạn là người đã và đang tìm hiểu về ML/DL thì chắc hẳn sẽ nghe qua cụm từ “metric” hay nghe đâu đó là
+“mô hình này có độ chính xác 96%”, “F1-score của model đạt 91%”, vv. Vậy nó là gì,
+có tác dụng gì, có những loại nào, thì sau đây hãy cùng nhau tìm hiểu về nó nha.&lt;/p&gt;
+
+&lt;p&gt;Và như thường lệ, đây là bài viết nhằm mục đích tổng hợp kiến thức cho cá nhân mình, vì vậy mình sẽ tổng hợp
+từ nhiều nguồn và tài liệu khác nhau nên đôi lúc các bạn có thể sẽ thấy quen quen ở đâu đó :))&lt;/p&gt;
+
+&lt;p&gt;Các nội dung chính:&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;1. Metrics là gì và tác dụng như thế nào trong bài toán ML/DL ?&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;2. Các loại metric hay dùng&lt;/strong&gt;&lt;/p&gt;
+
+&lt;h1 id=&quot;chi-tiết-nội-dung-&quot;&gt;&lt;strong&gt;&lt;em&gt;Chi tiết nội dung&lt;/em&gt;&lt;/strong&gt; :&lt;/h1&gt;
+&lt;h2 id=&quot;1-metrics-là-gì-và-tác-dụng-như-thế-nào-trong-bài-toán-mldl-&quot;&gt;1. Metrics là gì và tác dụng như thế nào trong bài toán ML/DL ?&lt;/h2&gt;
+
+&lt;p&gt;Bất kể bạn làm xong một việc gì thì đều cần một thước đo để đánh giá công việc đó xem làm tốt đến đâu,
+công cụ để đánh giá đó trong ML/DL được gọi là metric.&lt;/p&gt;
+
+&lt;h2 id=&quot;2-các-loại-metric-hay-dùng&quot;&gt;2. Các loại metric hay dùng&lt;/h2&gt;
+
+&lt;p&gt;Trước khi đến với các metric, ta sẽ nói qua về confusion matrix, confusion matrix là một bảng thể hiện số lượng các mẫu được dự đoán đúng, sai trong tập test. Đây là 1 ví dụ 1 confusion matrix dự đoán bênh ung thư. Giả sử ta coi trường hợp bệnh ung thư là positive ( Ta quan tâm chỉ số của label nào thì coi nó là positive)&lt;/p&gt;
+
+&lt;p align=&quot;center&quot;&gt;
+  &lt;img src=&quot;/images/metrics/confusion_m.png&quot; /&gt;
+&lt;/p&gt;
+
+&lt;p&gt;Ta thẩy tổng số mẫu = 80+20+55+90 = 245
+Trong đó :&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;TP: Đoán là nhãn positive và dự đoán đó đúng&lt;/li&gt;
+  &lt;li&gt;TN: Đoán là nhãn negative và dự đoán đó đúng&lt;/li&gt;
+  &lt;li&gt;FN: Đoán là nhãn negative và dự đoán đó sai&lt;/li&gt;
+  &lt;li&gt;FP: Đoán là nhãn positvie và dự đoán đó sai&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;21-accuracy&quot;&gt;2.1 Accuracy&lt;/h3&gt;
+
+&lt;p&gt;Có lẽ accuracy là metric được dùng thường xuyên nhất đặc biệt trong các bàn toán phân loại. Accuracy được hiểu
+là: 
+    Acc =  Tổng số dự đoán đúng/ Tổng số mẫu có trong tập test.&lt;/p&gt;
+
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;Acc = (TP + TN) / Tổng số mẫu trong tập test
+    = (90+80) / 245
+    = 170/ 245
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h3 id=&quot;22-precesion&quot;&gt;2.2 Precesion&lt;/h3&gt;
+
+&lt;p&gt;Precision = Tổng số dự đoán postive đúng/ Trên tổng số mẫu trong tập test được dự đoán là positive&lt;/p&gt;
+
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;Precision = TP/ (TP + FP) 
+          = 90/ (90+55)
+          = 90/145
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;Precision càng cao khi tất cả các nhãn đươc dự đoán là positive đều đúng.&lt;/p&gt;
+
+&lt;p&gt;Precision dùng khi việc dự đoán sai các mẫu negavtive là rất nguy hiểm. Bạn muốn lọc được mẫu postivie có độ chắc chắn cao, ví dụ lọc mail spam (Nếu coi mail spam là postive)&lt;/p&gt;
+
+&lt;h3 id=&quot;23-recall&quot;&gt;2.3 Recall&lt;/h3&gt;
+
+&lt;p&gt;Recall = Tổng số dự đoán positive đúng / Trên tổng số mẫu posivate có trong tập test&lt;/p&gt;
+
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;Recall = TP/ (TP + FN)
+       = 90/(90+20)
+       = 90/110
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;Recall càng cao khi các điểm positvie thực tế bị bỏ sót càng ít.&lt;/p&gt;
+
+&lt;p&gt;Recall dùng khi việc dự đoán sai các mẫu postive là rất nguy hiểm, thà lọc nhầm còn hơn bỏ sót,ví dụ dự đoán bệnh nhân ung thư ( Nếu coi bệnh ung thư là positive) . Vì nếu họ không ung thư mà bảo họ ung thư, họ đi xét nghiệm chỗ khác hay thủ công thì ổn. Chứ họ mắc ung thư mà bảo k vấn đề gì, không chạy chữa gì thì sao chịu trách nhiệm nổi, đúng không bạn ?? :)))&lt;/p&gt;
+
+&lt;h3 id=&quot;24-f1-score&quot;&gt;2.4 F1-Score&lt;/h3&gt;
+
+&lt;p&gt;Vậy nếu bạn muốn cân bằng precision và recall thì làm thế nào ? Yên tâm, F1-Score sẽ giúp bạn làm điều đó&lt;/p&gt;
+
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;F1-Score = 2/(1/Precision + 1/Recall)
+         = 2*Recall*Precision/(Precision + Recall) 
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h2 id=&quot;lưu-ý-&quot;&gt;Lưu ý :&lt;/h2&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;Thông thường ta hay sử dụng metric accuracy, nhưng
+khi dữ liệu mất cân bằng, thì accuracy
+không đủ độ tin tưởng nữa mà cần phải sử dụng
+các metric khác để đo lường&lt;/p&gt;
+&lt;/blockquote&gt;</content><author><name></name></author><summary type="html">Nếu bạn là người đã và đang tìm hiểu về ML/DL thì chắc hẳn sẽ nghe qua cụm từ “metric” hay nghe đâu đó là “mô hình này có độ chính xác 96%”, “F1-score của model đạt 91%”, vv. Vậy nó là gì, có tác dụng gì, có những loại nào, thì sau đây hãy cùng nhau tìm hiểu về nó nha.</summary></entry><entry><title type="html">17 cách tăng tốc quá trình training với Pytorch. Bạn có bỏ lỡ cái nào không ?</title><link href="http://localhost:4000/pytorch-faster/" rel="alternate" type="text/html" title="17 cách tăng tốc quá trình training với Pytorch. Bạn có bỏ lỡ cái nào không ?" /><published>2021-01-13T00:00:00+07:00</published><updated>2021-01-13T00:00:00+07:00</updated><id>http://localhost:4000/pytorch-faster</id><content type="html" xml:base="http://localhost:4000/pytorch-faster/"></content><author><name></name></author><summary type="html"></summary></entry><entry><title type="html">Tối ưu parameters trong pytorch bằng Optuna</title><link href="http://localhost:4000/optuna-pytorch/" rel="alternate" type="text/html" title="Tối ưu parameters trong pytorch bằng Optuna" /><published>2021-01-01T00:00:00+07:00</published><updated>2021-01-01T00:00:00+07:00</updated><id>http://localhost:4000/optuna-pytorch</id><content type="html" xml:base="http://localhost:4000/optuna-pytorch/">&lt;p&gt;#TODO&lt;/p&gt;
+&lt;h1 id=&quot;1-optuna-là-gì-&quot;&gt;1. Optuna là gì ?&lt;/h1&gt;
+
+&lt;h1 id=&quot;2-tại-sao-phải-sử-dụng-optuna&quot;&gt;2. Tại sao phải sử dụng optuna&lt;/h1&gt;
+
+&lt;h1 id=&quot;3-optuna-hoạt-động-như-thế-nào&quot;&gt;3. Optuna hoạt động như thế nào&lt;/h1&gt;
+
+&lt;h1 id=&quot;4-cài-đặt-và-thử-nghiệm&quot;&gt;4. Cài đặt và thử nghiệm&lt;/h1&gt;
+
+&lt;h1 id=&quot;5-đánh-giá-và-kết-luận&quot;&gt;5. đánh giá và kết luận&lt;/h1&gt;
+
+&lt;h2 id=&quot;nguồn&quot;&gt;Nguồn:&lt;/h2&gt;</content><author><name></name></author><summary type="html">#TODO 1. Optuna là gì ?</summary></entry><entry><title type="html">Hướng Dẫn Cài Đặt Và Sử Dụng Các Mô Hình OCR cho Tiếng Việt</title><link href="http://localhost:4000/ocr-pretrain/" rel="alternate" type="text/html" title="Hướng Dẫn Cài Đặt Và Sử Dụng Các Mô Hình OCR cho Tiếng Việt" /><published>2020-12-30T00:00:00+07:00</published><updated>2020-12-30T00:00:00+07:00</updated><id>http://localhost:4000/ocr-pretrain</id><content type="html" xml:base="http://localhost:4000/ocr-pretrain/">&lt;p&gt;Cài đặt các mô hình pretrained cho tiếng việt như EasyOCR, TranformerOCR, Tesseract, …&lt;/p&gt;
+
+&lt;div class=&quot;img-div&quot;&gt;
+    &lt;img src=&quot;/images/ocr_pretrain/ocr.jpg&quot; height=&quot;700&quot; /&gt;
+&lt;/div&gt;
+
+&lt;p&gt;Trong bài viết này, mình sẽ giới thiệu và hướng dẫn cài đặt các mô hình OCR được train sẵn cho tiếng việt để mọi người
+cũng như mình có thể dễ dàng sử dụng. Mà mình cũng nói trước nhé, các mô hình này được thiết kế để ăn sẵn, nó sẽ tốt với
+bộ dữ liệu giống với bộ dữ liệu training set của họ(thường là data đẹp ), còn nếu muốn nâng cao lên với các trường hợp
+ảnh khó hơn thì không có cách nào khác là tự xây dựng riêng cho mình một model OCR.&lt;/p&gt;
+
+&lt;p&gt;Các mô hình mình sử dụng sẽ được dẫn link ở cuối bài, nếu tác giả muốn gỡ thì hãy liên lạc với mình nha
+(chắc không có đâu nhưng cứ lo xa chút :vv). Thôi mình không lan man nữa, bắt đầu nào :)))&lt;/p&gt;
+
+&lt;p&gt;Bài viết của mình sẽ gồm các phần như sau :&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;1. OCR là gì?&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;2. TesseractOCR&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;3. EasyOCR&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;4. TransformerOCR (VietOCR)&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;5. Updating …&lt;/strong&gt;&lt;/p&gt;
+
+&lt;h1 id=&quot;chi-tiết-nội-dung-&quot;&gt;&lt;strong&gt;&lt;em&gt;Chi tiết nội dung&lt;/em&gt;&lt;/strong&gt; :&lt;/h1&gt;
+
+&lt;h2 id=&quot;1-ocr-là-gì&quot;&gt;1. OCR là gì?&lt;/h2&gt;
+
+&lt;p&gt;OCR là từ viết tắt của optical character recognition, được dịch sang tiếng việt là nhận diện ký tự quang học, hiểu nôm
+na là nó sẽ dự đoán xem ảnh input vào có chứa chữ gì như ví dụ sau:&lt;/p&gt;
+
+&lt;div class=&quot;img-div&quot;&gt;
+    &lt;img src=&quot;/images/ocr_pretrain/cmnd.png&quot; /&gt;
+&lt;/div&gt;
+
+&lt;p&gt;&lt;strong&gt;===&amp;gt; OUTPUT: 015071000030&lt;/strong&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;ứng-dụng-của-ocr-là-gì-&quot;&gt;Ứng dụng của OCR là gì ?&lt;/h3&gt;
+
+&lt;p&gt;Ứng dụng của OCR thì nhiều vô kể, miễn là trong ảnh chứa thông tin liên quan đến text 
+thì output sẽ là nội dung của đoạn text đó:&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;Nhận diện thông tin cá nhân từ chứng minh nhân dân, thẻ căn cước, bằng lái xe, hộ chiếu, …&lt;/li&gt;
+  &lt;li&gt;Đọc giá trị của công tơ điện từ ảnh chụp.&lt;/li&gt;
+  &lt;li&gt;Nhận diện biển số xe, phát hiện từ khóa,..&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;2-tesseract&quot;&gt;2. Tesseract&lt;/h2&gt;
+&lt;p&gt;Tesseract là ứng dụng OCR mã nguồn mở được tài trợ bằng Google. 
+Nó hỗ trợ tốt nhất cho văn bản các văn bản tdf trong điều kiện read-only ( Không thể sao chép trực tiếp nội dung) .
+Có thể sử dụng trực tiếp bằng code hoặc thông qua API.&lt;/p&gt;
+
+&lt;p&gt;Tesseract được phát triển để chạy trên cả 3 hệ điều hành phổ biến hiện nay như Window, 
+Mac và Linux. Nó hỗ trợ trên 100 ngôn ngũo gồm khác nhau bao gồm cả tiếng việt.&lt;/p&gt;
+
+&lt;h3 id=&quot;21-hướng-dẫn-cài-đặt&quot;&gt;2.1 Hướng dẫn cài đặt&lt;/h3&gt;
+
+&lt;p&gt;Mình sẽ hướng dẫn cài đặt để sử dụng với python và linux nhé các bạn:&lt;/p&gt;
+
+&lt;div class=&quot;language-console highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;gp&quot;&gt;$&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;sudo &lt;/span&gt;apt-get &lt;span class=&quot;nb&quot;&gt;install &lt;/span&gt;tesseract-ocr
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;div class=&quot;img-div&quot;&gt;
+    &lt;img src=&quot;/images/ocr_pretrain/tesseract_install_1.png&quot; /&gt;
+&lt;/div&gt;
+
+&lt;p&gt;Tiếp tục&lt;/p&gt;
+
+&lt;div class=&quot;language-console highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;gp&quot;&gt;$&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;pip &lt;span class=&quot;nb&quot;&gt;install &lt;/span&gt;pytesseract
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;div class=&quot;img-div&quot;&gt;
+    &lt;img src=&quot;/images/ocr_pretrain/tesseract_install_2.png&quot; /&gt;
+&lt;/div&gt;
+
+&lt;p&gt;Download &lt;a href=&quot;https://github.com/tesseract-ocr/tessdata/blob/master/vie.traineddata&quot;&gt;pretrained cho tiếng việt&lt;/a&gt;
+, rồi copy sang thư mục như sau:&lt;/p&gt;
+
+&lt;div class=&quot;language-console highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;gp&quot;&gt;$&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;sudo cp &lt;/span&gt;vie.traineddata /usr/share/tesseract-ocr/4.00/tessdata/
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h3 id=&quot;22-thử-nghiệm&quot;&gt;2.2 Thử nghiệm&lt;/h3&gt;
+
+&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;kn&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;cv2&lt;/span&gt;
+&lt;span class=&quot;kn&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;pytesseract&lt;/span&gt;
+
+&lt;span class=&quot;c1&quot;&gt;# Load image
+&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;image&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;cv2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;imread&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'17-35-29.png'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+
+&lt;span class=&quot;c1&quot;&gt;# Convert raw image -&amp;gt; Binaray image
+&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;gray&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;cv2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;cvtColor&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;image&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;cv2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;COLOR_BGR2GRAY&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;gray&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;cv2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;threshold&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;gray&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;255&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;cv2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;THRESH_BINARY&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;|&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;cv2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;THRESH_OTSU&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;gray&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;gray&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;
+&lt;span class=&quot;c1&quot;&gt;# Image To Text
+&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;text&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;pytesseract&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;image_to_string&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;gray&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;lang&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'vie'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+
+&lt;span class=&quot;k&quot;&gt;print&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;text&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;Ảnh đầu vào :&lt;/p&gt;
+
+&lt;div class=&quot;img-div&quot;&gt;
+    &lt;img src=&quot;/images/ocr_pretrain/tesseract_input.png&quot; /&gt;
+&lt;/div&gt;
+
+&lt;p&gt;Output:&lt;/p&gt;
+
+&lt;div class=&quot;img-div&quot;&gt;
+    &lt;img src=&quot;/images/ocr_pretrain/tesseract_output.png&quot; /&gt;
+&lt;/div&gt;
+
+&lt;h2 id=&quot;3-easyocr&quot;&gt;3. EasyOCR&lt;/h2&gt;
+&lt;p&gt;EasyOCR là mô hình pretrained được hỗ trợ với 70+ ngôn ngữ khác nhau, danh sách ngôn ngữ được hỗ trợ có thể xem tại []
+(https://www.jaided.ai/easyocr)&lt;/p&gt;
+
+&lt;div class=&quot;img-div&quot;&gt;
+    &lt;img src=&quot;/images/ocr_pretrain/easy_ocr_pipline.jpeg&quot; /&gt;
+&lt;/div&gt;
+
+&lt;h3 id=&quot;31-hướng-dẫn-cài-đặt&quot;&gt;3.1 Hướng dẫn cài đặt&lt;/h3&gt;
+
+&lt;div class=&quot;language-console highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;gp&quot;&gt;$&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;pip &lt;span class=&quot;nb&quot;&gt;install &lt;/span&gt;easyocr
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;div class=&quot;img-div&quot;&gt;
+    &lt;img src=&quot;/images/ocr_pretrain/easy_ocr_install.png&quot; /&gt;
+&lt;/div&gt;
+
+&lt;p&gt;Lưu ý, trong đoạn code easyocr.Reader([‘en’, ‘vi’]), bạn có thể chọn 1 hoặc nhiều hơn một ngôn ngữ để phát hiện.&lt;/p&gt;
+
+&lt;h3 id=&quot;32-thực-nghiệm&quot;&gt;3.2 Thực nghiệm&lt;/h3&gt;
+
+&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;kn&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;easyocr&lt;/span&gt;
+
+&lt;span class=&quot;n&quot;&gt;reader&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;easyocr&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;Reader&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;([&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'en'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;'vi'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;])&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;result&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;reader&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;readtext&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'17-35-29.png'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+
+&lt;span class=&quot;k&quot;&gt;print&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;result&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;div class=&quot;img-div&quot;&gt;
+    &lt;img src=&quot;/images/ocr_pretrain/easy_ocr_input.png&quot; /&gt;
+&lt;/div&gt;
+
+&lt;p&gt;Kết quả:&lt;/p&gt;
+
+&lt;div class=&quot;img-div&quot;&gt;
+    &lt;img src=&quot;/images/ocr_pretrain/easy_ocr_output.png&quot; /&gt;
+&lt;/div&gt;
+
+&lt;h2 id=&quot;4-transformerocr-vietocr&quot;&gt;4. TransformerOCR (VietOCR)&lt;/h2&gt;
+
+&lt;p&gt;Phương pháp này được xây dựng từ tác giả Phạm Bá Cường Quốc, vì trong blog này tác giả đã trình bày chi tiết về thuật toán cũng như so sánh ưu nhược điểm với phương pháp AttentionOCR hay CRNN+CTC Loss rồi nên mình sẽ không nói lại quá nhiều. Có thể hiểu đại ý như sau:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Phương pháp OCR thông thường là CNN + LSTM, mô hình cắt ảnh thì nhiều phần nhỏ theo chiều dọc, mỗi phần đó được đưa qua một mạng CNN nào đó (ở đây tác giả dùng VGG) để ra được 1 feature đặc trưng, rồi cho một list feature đó qua LSTM để dự đoán các kí tự trong ảnh.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;div class=&quot;img-div&quot;&gt;
+    &lt;img src=&quot;/images/ocr_pretrain/viet_ocr_pipline.jpeg&quot; /&gt;
+&lt;/div&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Phương pháp TransformerOCR cải tiến hơn bằng cách thay thế LSTM bằng một mô hình transformer (là mô hình nền tảng của BERT khá nổi tiếng).&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;div class=&quot;img-div&quot;&gt;
+    &lt;img src=&quot;/images/ocr_pretrain/viet_ocr_pipline_2.jpeg&quot; /&gt;
+&lt;/div&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Ngoài ra phương pháp TransformerOCR sử dụng CrossEntropyLoss thay vì sử dụng CTC Loss do phương pháp CTC Loss có nhiều hạn chế.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;41-hướng-dẫn-cài-đặt&quot;&gt;4.1 Hướng dẫn cài đặt&lt;/h3&gt;
+
+&lt;div class=&quot;language-console highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;go&quot;&gt;pip install vietocr==0.3.5
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;div class=&quot;img-div&quot;&gt;
+    &lt;img src=&quot;/images/ocr_pretrain/viet_ocr_install.png&quot; /&gt;
+&lt;/div&gt;
+
+&lt;h3 id=&quot;42-thử-nghiệm&quot;&gt;4.2 Thử nghiệm&lt;/h3&gt;
+
+&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;kn&quot;&gt;from&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;vietocr.tool.predictor&lt;/span&gt; &lt;span class=&quot;kn&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Predictor&lt;/span&gt;
+&lt;span class=&quot;kn&quot;&gt;from&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;vietocr.tool.config&lt;/span&gt; &lt;span class=&quot;kn&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Cfg&lt;/span&gt;
+&lt;span class=&quot;kn&quot;&gt;from&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;PIL&lt;/span&gt; &lt;span class=&quot;kn&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Image&lt;/span&gt;
+
+&lt;span class=&quot;c1&quot;&gt;# sử dụng config của các bạn được export lúc train nếu đã thay đổi 
+# tham số
+# config = Cfg.load_config_from_file('config.yml')
+# sử dụng config mặc định của mô hình
+&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;config&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Cfg&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;load_config_from_name&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'vgg_transformer'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;c1&quot;&gt;# đường dẫn đến trọng số đã huấn luyện hoặc comment để sử dụng 
+#pretrained model mặc định
+&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;config&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'weights'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;'transformerocr.pth'&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;config&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'device'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;'cpu'&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;# device chạy 'cuda:0', 'cuda:1', 'cpu'
+&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;detector&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Predictor&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;config&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+
+&lt;span class=&quot;n&quot;&gt;img&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;'17-35-29.png'&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;img&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Image&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;open&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;img&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;c1&quot;&gt;# dự đoán 
+# muốn trả về xác suất của câu dự đoán thì đổi return_prob=True
+&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;s&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;detector&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;predict&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;img&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;return_prob&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;bp&quot;&gt;False&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;print&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'TEXT OUTPUT: '&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;s&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;div class=&quot;img-div&quot;&gt;
+    &lt;img src=&quot;/images/ocr_pretrain/viet_ocr_input.png&quot; /&gt;
+&lt;/div&gt;
+
+&lt;p&gt;Kết quả:&lt;/p&gt;
+
+&lt;div class=&quot;img-div&quot;&gt;
+    &lt;img src=&quot;/images/ocr_pretrain/viet_ocr_output.png&quot; /&gt;
+&lt;/div&gt;
+
+&lt;p&gt;Một số lưu ý từ tác giả :&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;Phương pháp TransformerOCR dù được sử dụng công nghệ hiện đại nhưng chưa cải tiến quá nhiều so với phương pháp SOTA trước đó như AttentionOCR mà lại có thời gian dự đoán chậm hơn khá nhiều.&lt;/li&gt;
+  &lt;li&gt;Pretrained model được huấn luyện với 10m ảnh chữ in nên nếu muốn sử dụng trong hệ thống product thực tế của bạn thì cần phải training thêm&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h1 id=&quot;updating-&quot;&gt;Updating …&lt;/h1&gt;
+
+&lt;h1 id=&quot;nguồn&quot;&gt;Nguồn&lt;/h1&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;https://pbcquoc.github.io/vietocr/&lt;/li&gt;
+  &lt;li&gt;https://github.com/pbcquoc/vietocr&lt;/li&gt;
+  &lt;li&gt;https://github.com/JaidedAI/EasyOCR&lt;/li&gt;
+  &lt;li&gt;https://tesseract-ocr.github.io/&lt;/li&gt;
+&lt;/ul&gt;</content><author><name></name></author><summary type="html">Cài đặt các mô hình pretrained cho tiếng việt như EasyOCR, TranformerOCR, Tesseract, …</summary></entry><entry><title type="html">VietOCR - Nhận Dạng Tiếng Việt Sử Dụng Mô Hình Transformer và AttentionOCR</title><link href="http://localhost:4000/vietocr/" rel="alternate" type="text/html" title="VietOCR - Nhận Dạng Tiếng Việt Sử Dụng Mô Hình Transformer và AttentionOCR" /><published>2020-06-24T00:00:00+07:00</published><updated>2020-06-24T00:00:00+07:00</updated><id>http://localhost:4000/vietocr</id><content type="html" xml:base="http://localhost:4000/vietocr/">&lt;div class=&quot;img-div-any-width&quot;&gt;
+    &lt;img src=&quot;/images/vietocr/sample.png&quot; /&gt;
+&lt;/div&gt;
+&lt;h1 id=&quot;giới-thiệu&quot;&gt;Giới Thiệu&lt;/h1&gt;
+&lt;p&gt;Trong blog này, mình chia sẻ một số thực nghiệm của 2 mô hình OCR cho bài toán nhận dạng chữ tiếng việt: AttentionOCR và TransformerOCR. AttentionOCR sử dụng kiến trúc attention seq2seq đã được sử dụng khá nhiều trong các bài toán NLP và cả OCR, còn TransformerOCR sử dụng kiến trúc của Transformer đã đạt được nhiều tiến bộ vượt bậc cho cộng đồng NLP. 
+Một câu hỏi mà mình cũng khá quan tâm là &lt;em&gt;Liệu TransformerOCR có mang lại kết quả vượt bậc như những gì các bạn đã nhìn thấy trong các bài toán NLP hay không ?&lt;/em&gt;
+&lt;br /&gt;&lt;br /&gt;Đồng thời, mình cũng cung cấp một &lt;a href=&quot;https://github.com/pbcquoc/vietocr&quot;&gt;thư viện&lt;/a&gt; mới cho bài toán OCR, thư viện hướng tới kết quả chính xác, nhanh chóng, dễ huấn luyện, dễ dự đoán cho cả các bạn chưa có nhiều kinh nghiệm cũng có thể sử dụng được trong các bài toán liên quan đến số hóa.&lt;/p&gt;
+
+&lt;h1 id=&quot;mô-hình&quot;&gt;Mô Hình&lt;/h1&gt;
+&lt;p&gt;Trong phần này mình sẽ trình bày cách kết hợp mô hình CNN và mô hình Language Model (Seq2Seq và Transformer) để tạo thành một mô hình giúp các bạn giải quyết bài toán OCR. Chi tiết từng bước mô hình hoạt động, các bạn nên tham khảo những bài giới thiệu kiến trúc seq2seq của cộng đồng NLP vì mô hình này được ứng dụng khá nhiều và nổi tiếng.&lt;/p&gt;
+
+&lt;p&gt;Ngoài ra, mình cũng so sánh hạn chế của mô hình OCR cổ điển sử dụng CTCLoss với 2 mô hình kể trên từ đó giúp các bạn lựa chọn mô hình phù hợp trong các vấn đề thực tế.&lt;/p&gt;
+
+&lt;h2 id=&quot;cnn-của-mô-hình-ocr&quot;&gt;CNN Của Mô Hình OCR&lt;/h2&gt;
+&lt;p&gt;Mô hình CNN dùng trong bài toán OCR nhận đầu vào là một ảnh, thông thường có kích thước với chiều dài lớn hơn nhiều so với chiều rộng, do đó việc điều chỉnh tham số stride size của tầng pooling là cực kì quan trọng. Mình thường chọn kích thước stride size của các lớp pooling cuối cùng là wxh=2x1 trong mô hình OCR. Không thay đổi stride size phù hợp với kích thước ảnh thì sẽ dẫn đến kết quả nhận dạng của mô hình sẽ tệ.&lt;/p&gt;
+
+&lt;p&gt;Đối với mô hình VGG, việc thay đổi pooling size khá dễ do kiến trúc đơn giản, tuy nhiên đối với mô hình phức tạp khác như resnet việc điều chỉnh tham số pooling size hơi phức tạp do một ảnh bị downsampling không chỉ bởi tầng pooling mà còn tại các tầng convolution khác.&lt;/p&gt;
+
+&lt;p&gt;Trong pytorch, đối với mô hình VGG, các bạn chỉ đơn giản là thay thế stride size của tầng pooling.&lt;/p&gt;
+&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;n&quot;&gt;cnn&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;features&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;torch&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;nn&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;AvgPool2d&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;kernel_size&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;ks&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;pool_idx&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;],&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;stride&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;ss&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;pool_idx&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;],&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;padding&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h2 id=&quot;attentionocr&quot;&gt;AttentionOCR&lt;/h2&gt;
+
+&lt;div class=&quot;img-div&quot;&gt;
+    &lt;img src=&quot;/images/vietocr/cnn_seq2seq.jpg&quot; /&gt;
+&lt;/div&gt;
+
+&lt;p&gt;AttentionOCR là sự kết hợp giữa mô hình CNN và mô hình Attention Seq2Seq. Cách hoạt động của mô hình này tương tự như kiến trúc của mô hình seq2seq trong bài toán dịch máy. Với bài toán dịch máy từ tiếng việt sang anh, chúng ta cần encode một chuỗi tiếng việt thành một vector đặc trưng, còn trong mô hình AttentionOCR, thì dữ liệu đầu vào này là một ảnh.&lt;/p&gt;
+
+&lt;p&gt;Một ảnh qua mô hình CNN, sẽ cho một feature maps có kích thước channelxheightxwidth, feature maps này sẽ trở thành đầu vào cho mô hình LSTM, tuy nhiên, mô hình LSTM chỉ nhận chỉ nhận đầu vào có kích thước là hiddenxtime_step. Một cách đơn giản và hợp lý là 2 chiều cuối cùng heightxwidth của feature maps sẽ được duổi thẳng. Feature maps lúc này sẽ có kích thước phù hợp với yêu cầu của mô hình LSTM.&lt;/p&gt;
+
+&lt;div class=&quot;img-div&quot;&gt;
+    &lt;img src=&quot;/images/vietocr/cnn_fts.jpg&quot; /&gt;
+&lt;/div&gt;
+
+&lt;p&gt;Feature maps của mô hình CNN sau khi được flatten thì được truyền vào làm input của mô hình LSTM, tại mỗi thời điểm, mô hình LSTM cần dự đoán từ tiếp theo trong ảnh là gì.&lt;/p&gt;
+
+&lt;h2 id=&quot;transformerocr&quot;&gt;TransformerOCR&lt;/h2&gt;
+
+&lt;div class=&quot;img-div&quot;&gt;
+    &lt;img src=&quot;/images/vietocr/transformerocr.jpg&quot; /&gt;
+&lt;/div&gt;
+
+&lt;p&gt;Các bạn có thể  tận dụng kiến trúc transformer thay cho mô hình LSTM để dự đoán từ tiếp theo trong ảnh. Chi tiết kiến trúc và cách hoạt động của mô hình transformer mình đã giải thích rất chi tiết tại &lt;a href=&quot;https://pbcquoc.github.io/transformer/&quot;&gt;đây&lt;/a&gt;.&lt;/p&gt;
+
+&lt;h2 id=&quot;huấn-luyện-mô-hình&quot;&gt;Huấn Luyện Mô Hình&lt;/h2&gt;
+&lt;p&gt;Huấn luyện mô hình AttenionOCR hay TransformerOCR hoàn toàn giống với luyện mô hình seq2seq, chúng đều sử dụng cross-entropy loss để tối ưu thay vì sử dụng CTCLoss như mô hình CRNN, tức là tại mỗi thời điểm mô hình dự đoán một từ sau đó so sánh với nhãn để tính loss và cập nhật lại trọng số của mô hình.&lt;/p&gt;
+
+&lt;h2 id=&quot;hạn-chế-của-mô-hình-sử-dụng-ctcloss&quot;&gt;Hạn Chế Của Mô Hình Sử dụng CTCLoss&lt;/h2&gt;
+&lt;p&gt;Đối với mô hình CRNN sử dụng CTCloss để làm hàm mục tiêu, số lượng kí tự đối đa có thể dự đoán bằng với widthxheight của feature maps. Do đó, các bạn cần phải cẩn thận điều chỉnh kiến trúc mô hình để có thể dự đoán được số kí tự phù hợp với từng bộ dataset. Đối với mô hình AttentionOCR hoặc TransformerOCR, các bạn không gặp vấn đề này, làm cho các bạn có thể dễ dàng sử dụng lại pretrained model cho các loại dữ liệu khác nhau.&lt;/p&gt;
+
+&lt;p&gt;Ngoài ra, AttentionOCR hoặc TransformerOCR đều có kiến trúc của mô hình dịch này seq2seq, do đó các thủ thuật của mô hình này đều có thể ứng dụng cho mô hình của chúng ta.&lt;/p&gt;
+
+&lt;h1 id=&quot;thư-viện-vietocr&quot;&gt;Thư Viện VietOCR&lt;/h1&gt;
+&lt;p&gt;Thư viện VietOCR được mình xây dựng với mục đích hỗ trợ các bạn có thể sử dụng để giải quyết các bài toán liên quan đến OCR trong công nghiệp. Thư viện cung cấp cả 2 kiến trúc AtentionOCR và TransformerOCR. Tuy kiến trúc TransformerOCR hoạt động khá tốt trong NLP, nhưng theo mình nhận xét thì độ chính không có sự cải thiện đáng kể so với AttentionOCR mà thời gian dự đoán lại chậm hơn khá nhiều.&lt;/p&gt;
+
+&lt;p&gt;Mình có cung cấp pretrained model được mình huấn luyện trên tập dữ liệu 10m ảnh để các bạn có thể sử dụng nhanh chóng trong các bài toán mới. Tuy nhiên, mình khuyến khích các bạn huấn luyện mô hình trên tập dữ liệu mới của bản thân nếu muốn sử dụng trong công nghiệp.&lt;/p&gt;
+
+&lt;p&gt;Để thử nghiệm nhanh chóng mô hình các bạn có thể tham khảo notebook tại &lt;a href=&quot;https://colab.research.google.com/drive/1GVRKGFPsmq_xKJbOuSplrIDJZYp-IyzW?usp=sharing&quot;&gt;đây&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;Ở phần tiếp theo, mình sẽ hướng dẫn các bạn cách tạo bộ dataset phù hợp với thư viện, sử dụng thư viện để huấn luyện trên dataset mới, thay đổi cách augmentate, dự đoán cho ảnh mới và một số lưu ý khi sử dụng thư viện.&lt;/p&gt;
+
+&lt;h2 id=&quot;dataset&quot;&gt;Dataset&lt;/h2&gt;
+&lt;p&gt;Để huấn luyện mô hình các bạn cần chuẩn bị dữ liệu ít nhất là khoảng 3k mẫu, trong các dự án thực tế thì nên sử dụng 20k mẫu trở lên. 
+Cấu trúc thư mục chứa dữ liệu&lt;/p&gt;
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;.
+├── img
+│   ├── 00000.jpg
+│   ├── 00001.jpg
+├── train_annotation.txt # nhãn tập train 
+└── val_annotation.txt # nhãn tập test
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;Dữ liệu file nhãn theo định dạng sau&lt;/p&gt;
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;path_to_file_name[tab]nhãn
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;img/74086.jpg   429/BCT-ĐTĐL
+img/04225.jpg   Như trên;
+img/97822.jpg   V/v: Duyệt dự toán chi phí Ban QLDA nhiệt điện 1 năm 2012 và
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h2 id=&quot;custom-augmentor&quot;&gt;Custom Augmentor&lt;/h2&gt;
+&lt;p&gt;Mặc định, mô hình có sử dụng augmentation, tuy nhiên các bạn có thể  cần augmentate theo cách khác nhau để đảm bảo tính biến dạng ảnh không quá lớn so với dữ liệu gốc. Do đó, thư viện cho phép các bạn tự định nghĩa augmentation như ví dụ dưới, và truyền vào lúc huấn luyện.&lt;/p&gt;
+
+&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;kn&quot;&gt;from&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;vietocr.loader.aug&lt;/span&gt; &lt;span class=&quot;kn&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;ImgAugTransform&lt;/span&gt;
+&lt;span class=&quot;kn&quot;&gt;from&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;imgaug&lt;/span&gt; &lt;span class=&quot;kn&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;augmenters&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;as&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;iaa&lt;/span&gt;
+
+&lt;span class=&quot;k&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;MyAugmentor&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;ImgAugTransform&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;):&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;__init__&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;bp&quot;&gt;self&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;):&lt;/span&gt;
+        &lt;span class=&quot;bp&quot;&gt;self&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;aug&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;iaa&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;GaussianBlur&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;sigma&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mf&quot;&gt;1.0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;))&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h2 id=&quot;huấn-luyện&quot;&gt;Huấn Luyện&lt;/h2&gt;
+&lt;p&gt;Để huấn luyện mô hình các bạn chỉ cần tạo được bộ dataset của mình, sau đó thay đổi các tham số quan trọng là có thể huấn luyện mô hình dễ dàng.&lt;/p&gt;
+
+&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;kn&quot;&gt;from&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;vietocr.tool.config&lt;/span&gt; &lt;span class=&quot;kn&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Cfg&lt;/span&gt;
+&lt;span class=&quot;kn&quot;&gt;from&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;vietocr.model.trainer&lt;/span&gt; &lt;span class=&quot;kn&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Trainer&lt;/span&gt;
+
+&lt;span class=&quot;c1&quot;&gt;# Các bạn có thể chọn vgg_transformer hoặc vgg_seq2seq 
+&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;config&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Cfg&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;load_config_from_name&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'vgg_transformer'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+
+&lt;span class=&quot;c1&quot;&gt;# Các bạn có thể thay đổi tập vocab của mình hoặc để mặc định vì tập vocab của mình đã tương đối đầy từ các kí tự rồi 
+# lưu ý rằng các kí tự không có trong tập vocab sẽ bị lỗi
+#config['vocab'] = 'tập vocab'
+&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;dataset_params&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;s&quot;&gt;'name'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'hw'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;# tên dataset do bạn tự đặt
+&lt;/span&gt;    &lt;span class=&quot;s&quot;&gt;'data_root'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'./data_line/'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;# thư mục chứa dữ liệu bao gồm ảnh và nhãn
+&lt;/span&gt;    &lt;span class=&quot;s&quot;&gt;'train_annotation'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'train_line_annotation.txt'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;# ảnh và nhãn tập train
+&lt;/span&gt;    &lt;span class=&quot;s&quot;&gt;'valid_annotation'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'test_line_annotation.txt'&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;# ảnh và nhãn tập test
+&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+
+&lt;span class=&quot;n&quot;&gt;params&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+         &lt;span class=&quot;s&quot;&gt;'print_every'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;200&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;# hiển thị loss mỗi 200 iteration 
+&lt;/span&gt;         &lt;span class=&quot;s&quot;&gt;'valid_every'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;10000&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;# đánh giá độ chính xác mô hình mỗi 10000 iteraction
+&lt;/span&gt;          &lt;span class=&quot;s&quot;&gt;'iters'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;20000&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;# Huấn luyện 20000 lần
+&lt;/span&gt;          &lt;span class=&quot;s&quot;&gt;'export'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'./weights/transformerocr.pth'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;# lưu model được huấn luyện tại này
+&lt;/span&gt;          &lt;span class=&quot;s&quot;&gt;'metrics'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;10000&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;# sử dụng 10000 ảnh của tập test để đánh giá mô hình
+&lt;/span&gt;         &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+
+&lt;span class=&quot;c1&quot;&gt;# update custom config của các bạn
+&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;config&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'trainer'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;].&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;update&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;params&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;config&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'dataset'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;].&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;update&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;dataset_params&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;config&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'device'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;'cuda:0'&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;# device để huấn luyện mô hình, để sử dụng cpu huấn luyện thì thay bằng 'cpu'
+&lt;/span&gt;
+&lt;span class=&quot;c1&quot;&gt;# huấn luyện mô hình từ pretrained model của mình sẽ nhanh hội tụ và cho kết quả tốt hơn khi bạn chỉ có bộ dataset nhỏ
+# để sử dụng custom augmentation, các bạn có thể sử dụng Trainer(config, pretrained=True, augmentor=MyAugmentor()) theo ví dụ trên.
+&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;trainer&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Trainer&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;config&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;pretrained&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;bp&quot;&gt;True&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+
+&lt;span class=&quot;c1&quot;&gt;# sử dụng lệnh này để visualize tập train, bao gồm cả augmentation 
+&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;trainer&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;visualize_dataset&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;
+
+&lt;span class=&quot;c1&quot;&gt;# bắt đầu huấn luyện 
+&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;trainer&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;train&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;
+
+&lt;span class=&quot;c1&quot;&gt;# visualize kết quả dự đoán của mô hình
+&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;trainer&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;visualize_prediction&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;
+
+&lt;span class=&quot;c1&quot;&gt;# huấn luyện xong thì nhớ lưu lại config để dùng cho Predictor
+&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;trainer&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;config&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;save&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'config.yml'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;h2 id=&quot;inference&quot;&gt;Inference&lt;/h2&gt;
+&lt;p&gt;Sau khi huấn luyện mô hình các bạn sử dụng config.yml và trọng số đã huấn luyện để dự đoán hoặc chỉ sử dụng pretrained model của mình.&lt;/p&gt;
+&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;kn&quot;&gt;from&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;vietocr.tool.predictor&lt;/span&gt; &lt;span class=&quot;kn&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Predictor&lt;/span&gt;
+&lt;span class=&quot;kn&quot;&gt;from&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;vietocr.tool.config&lt;/span&gt; &lt;span class=&quot;kn&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Cfg&lt;/span&gt;
+
+&lt;span class=&quot;c1&quot;&gt;# config = Cfg.load_config_from_file('config.yml') # sử dụng config của các bạn được export lúc train nếu đã thay đổi tham số  
+&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;config&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Cfg&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;load_config_from_name&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'vgg_transformer'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;# sử dụng config mặc định của mình 
+&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;config&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'weights'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;'./weights/transformerocr.pth'&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;# đường dẫn đến trọng số đã huấn luyện hoặc comment để sử dụng pretrained model của mình
+&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;config&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'device'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;'cuda:0'&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;# device chạy 'cuda:0', 'cuda:1', 'cpu'
+&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;detector&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Predictor&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;config&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+
+&lt;span class=&quot;n&quot;&gt;img&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;'./a.JPG'&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;img&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Image&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;open&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;img&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;c1&quot;&gt;# dự đoán 
+&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;s&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;detector&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;predict&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;img&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;return_prob&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;bp&quot;&gt;False&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;# muốn trả về xác suất của câu dự đoán thì đổi return_prob=True
+&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;h2 id=&quot;kết-quả&quot;&gt;Kết Quả&lt;/h2&gt;
+&lt;p&gt;Mình cung cấp 2 pretrained model được huấn luyện trên 10m ảnh với kết quả trong bảng sau.&lt;/p&gt;
+
+&lt;table&gt;
+  &lt;thead&gt;
+    &lt;tr&gt;
+      &lt;th&gt;&lt;b&gt;Backbone&lt;/b&gt;&lt;/th&gt;
+      &lt;th style=&quot;text-align: center&quot;&gt;&lt;b&gt;Config&lt;/b&gt;&lt;/th&gt;
+      &lt;th style=&quot;text-align: right&quot;&gt;&lt;b&gt;Precision full sequence&lt;/b&gt;&lt;/th&gt;
+      &lt;th style=&quot;text-align: right&quot;&gt;&lt;b&gt;Time&lt;/b&gt;&lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;td&gt;VGG19-bn - Transformer&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;vgg_transformer&lt;/td&gt;
+      &lt;td style=&quot;text-align: right&quot;&gt;0.8800&lt;/td&gt;
+      &lt;td style=&quot;text-align: right&quot;&gt;86ms @ 1080ti&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;VGG19-bn - Seq2Seq&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;vgg_seq2seq&lt;/td&gt;
+      &lt;td style=&quot;text-align: right&quot;&gt;0.8701&lt;/td&gt;
+      &lt;td style=&quot;text-align: right&quot;&gt;12ms @ 1080ti&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;h2 id=&quot;một-số-kết-quả-thực-nghiệm-của-mô-hình-hiện-tại&quot;&gt;Một Số Kết Quả Thực Nghiệm Của Mô Hình Hiện Tại&lt;/h2&gt;
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;Một vấn đề mình thấy hiện tại là mô hình khá nhạy cảm với sự thay đổi nhỏ của ảnh đầu vào khi các bạn sử dụng pretrained model trên tập dữ liệu mới chưa được huấn luyện. Do đó mình khuyến nghị các bạn nên huấn luyện lại mô hình nếu muốn sử dụng thực tế.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Mình đã sử beamsearch khi phát sinh câu, tuy nhiên độ chính xác không cải thiện có thể vì khi nhận dạng câu thì nội dung câu đó đã thể hiện rất rõ ràng trong ảnh rồi không giống như khi dịch máy, một câu tiếng việt có thể được dịch thành nhiều câu tiếng anh khác nhau.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Mô hình transformer không mang lại cải tiến vượt bậc trong bài toán OCR theo mình nghĩ vì câu mình cần nhận dạng đã thể hiện rõ ràng trong ảnh. Do đó sử dụng language model quá tốt cũng không mang lại hiệu quả.&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Mình nghĩ rằng bài toán nhận dạng OCR là một bài toán nhận dạng, tức là việc sử dụng language model (dùng để phát sinh câu) xịn xò có thể quá dư thừa, thay vào đó nên tập trung vào việc nhận dạng từng kí tự ??? Tuy nhiên việc nhận dạng từng kí tự đòi hỏi chi phí đánh nhãn quá lớn vì các bạn cần phải vẽ boundary box cho từng kí tự và các boundary box giữa 2 kí tự liên tiếp có thể bị đè lên nhau hoặc phân biệt không rõ ràng. Do đó, tùy vào trường hợp cụ thể mà các bạn có thể sử dụng phương pháp hơp lý. Ví dụ với chứng minh thư, các kí tự thường to rõ và ít nội dung các bạn có thể xem xét đánh boundary box cho từng kí tự, tuy nhiên với các loại văn bản có nhiều nội dung cần OCR các bạn có thể chọn nhận dạng theo từng dòng.&lt;/p&gt;
+
+&lt;p&gt;Mình hy vọng các chia sẻ trên và thư viện VietOCR sẽ giúp các bạn giải quyết nhanh các bài toán số hóa. Nếu các bạn có thắc mắc gì vui lòng comment phía dưới hoặc liên hệ mình tại pbcquoc@gmail.com&lt;/p&gt;</content><author><name></name></author><summary type="html">Giới Thiệu Trong blog này, mình chia sẻ một số thực nghiệm của 2 mô hình OCR cho bài toán nhận dạng chữ tiếng việt: AttentionOCR và TransformerOCR. AttentionOCR sử dụng kiến trúc attention seq2seq đã được sử dụng khá nhiều trong các bài toán NLP và cả OCR, còn TransformerOCR sử dụng kiến trúc của Transformer đã đạt được nhiều tiến bộ vượt bậc cho cộng đồng NLP. Một câu hỏi mà mình cũng khá quan tâm là Liệu TransformerOCR có mang lại kết quả vượt bậc như những gì các bạn đã nhìn thấy trong các bài toán NLP hay không ? Đồng thời, mình cũng cung cấp một thư viện mới cho bài toán OCR, thư viện hướng tới kết quả chính xác, nhanh chóng, dễ huấn luyện, dễ dự đoán cho cả các bạn chưa có nhiều kinh nghiệm cũng có thể sử dụng được trong các bài toán liên quan đến số hóa.</summary></entry><entry><title type="html">Tìm Hiểu Convolutional Neural Networks Cho Phân Loại Ảnh</title><link href="http://localhost:4000/cnn/" rel="alternate" type="text/html" title="Tìm Hiểu Convolutional Neural Networks Cho Phân Loại Ảnh" /><published>2019-04-03T00:00:00+07:00</published><updated>2019-04-03T00:00:00+07:00</updated><id>http://localhost:4000/cnn</id><content type="html" xml:base="http://localhost:4000/cnn/">&lt;h2 id=&quot;giới-thiệu&quot;&gt;Giới Thiệu&lt;/h2&gt;
+&lt;p&gt;Convolutional Neural Networks (CNN) là một trong những mô hình deep learning phổ biến nhất và có ảnh hưởng nhiều nhất trong cộng đồng Computer Vision. CNN được dùng trong trong nhiều bài toán như nhân dạng ảnh, phân tích video, ảnh MRI, hoặc cho bài các bài của lĩnh vự xử lý ngôn ngữ tự nhiên,và hầu hết đều giải quyết tốt các bài toán này. &lt;br /&gt;&lt;br /&gt; CNN cũng có lịch sử khá lâu đời. Kiến trúc gốc của mô hình CNN được giới thiệu bởi một nhà khoa học máy tính người Nhật vào năm 1980. Sau đó, năm 1998, Yan LeCun lần đầu huấn luyện mô hình CNN với thuật toán backpropagation cho bài toán nhận dạng chữ viết tay. Tuy nhiên, mãi đến năm 2012, khi một nhà khoa học máy tính người Ukraine Alex Krizhevsky (đệ của Geoffrey Hinton) xây dựng mô hình CNN (AlexNet) và sử dụng GPU để tăng tốc quá trình huấn luyện deep nets để đạt được top 1 trong cuộc thi Computer Vision thường niên ImageNet với độ lỗi phân lớp top 5 giảm hơn 10% so với những mô hình truyền thống trước đó, đã tạo nên làn sóng mãnh mẽ sử dụng deep CNN với sự hỗ trợ của GPU để giải quyết càng nhiều các vấn đề trong Computer Vision.&lt;/p&gt;
+
+&lt;h2 id=&quot;image-classification&quot;&gt;Image Classification&lt;/h2&gt;
+&lt;p&gt;Trong bài blog này, mình giới thiệu kiến trúc cụ thể của mô hình CNN cho bài toán phân loại ảnh. Phân loại ảnh là một bài toán quan trọng bậc nhất trong lĩnh vực Computer Vision. Chúng ta đã có rất nhiều nghiên cứu để giải quyết bài toán này bằng cách rút trích các đặc trưng rất phổ biến như SIFT, HOG rồi cho máy tính học nhưng những cách này tỏ ra không thực sự hiểu quả. Nhưng ngược lại, đối với con người, chúng ta lại có bản năng tuyệt vời để phân loại được những đối tượng trong khung cảnh xung quanh một cách dễ làm.&lt;/p&gt;
+
+&lt;p&gt;Dữ liệu đầu vào của bài toán là một bức ảnh. Một ảnh được biểu ảnh bằng ma trận các giá trị. Mô hình phân lớp sẽ phải dự đoán được lớp của ảnh từ ma trận điểm ảnh này, ví dụ như ảnh đó là con mèo, chó, hay là chim.&lt;/p&gt;
+
+&lt;div class=&quot;img-div&quot;&gt;
+    &lt;img src=&quot;/images/cnn_input.png&quot; /&gt;
+&lt;/div&gt;
+
+&lt;p&gt;Để biểu diễn một bức ảnh 256x256 pixel trong máy tính thì ta cần ma trận sẽ có kính thước 256x256 chiều, và tùy thuộc vào bức ảnh là có màu hay ảnh xám thì ma trận này sẽ có số kênh tương ứng, ví dụ với ảnh màu 256x256 RGB, chúng ta sẽ có ma trận 256x256x3 để biểu diễn ảnh này.&lt;/p&gt;
+
+&lt;h2 id=&quot;mối-liên-kết-giữ-cnn-và-thị-giác&quot;&gt;Mối liên kết giữ CNN và thị giác&lt;/h2&gt;
+&lt;p&gt;CNN có mối liên kết chặt chẽ với sinh học, cụ thể là của võ não thị giác, nơi xử lý thông tin liên quan đến hình ảnh từ các tế bào cảm thụ ánh sánh nằm ở mắt người. Năm 1962, 2 nhà thần kinh học người Mỹ là Hubel and Wiesel đã thực hiện thí nghiệm khám phá cách tổ chức của các tế bào não để xử lý thông tin thị giác và các tổ chức này đảm nhận nhiệm vụ nào. Trong &lt;a href=&quot;https://www.youtube.com/watch?v=Cw5PKV9Rj3o&quot;&gt;video&lt;/a&gt; này, các bạn có thể nghe được âm thanh đại diện cho các tế nào não phản ứng lại với các hình ảnh, góc cạnh, hướng của các đường thẳng xuất hiện trong video theo một trật tự nhất định. Điều này có nghĩ là mỗi neuron được thiết lập để phản ứng lại một số đặc điểm cố định của neuron đó.&lt;/p&gt;
+&lt;div class=&quot;img-div&quot;&gt;
+    &lt;img src=&quot;/images/cnn_visual_cortex.jpg&quot; /&gt;
+&lt;/div&gt;
+
+&lt;h2 id=&quot;cấu-trúc-cnn&quot;&gt;Cấu trúc CNN&lt;/h2&gt;
+&lt;p&gt;CNN bao gồm tập hợp các lớp cơ bản bao gồm: convolution layer + nonlinear layer, pooling layer, fully connected layer. Các lớp này liên kết với nhau theo một thứ tự nhất định. Thông thường, một ảnh sẽ được lan truyền qua tầng convolution layer + nonlinear layer đầu tiên, sau đó các giá trị tính toán được sẽ lan truyền qua pooling layer, bộ ba convolution layer + nonlinear layer + pooling layer có thể được lặp lại nhiều lần trong network. Và sau đó được lan truyền qua tầng fully connected layer và softmax để tính sác xuất ảnh đó chứa vật thế gì.&lt;/p&gt;
+
+&lt;div class=&quot;img-div&quot;&gt;
+    &lt;img src=&quot;/images/cnn_model.png&quot; /&gt;
+&lt;/div&gt;
+
+&lt;h3 id=&quot;convolution-layer&quot;&gt;Convolution Layer&lt;/h3&gt;
+&lt;p&gt;Convolution layer là lớp quan trọng nhất và cũng là lớp đầu tiên của của mô hình CNN. Lớp này có chức năng chính là phát hiện các đặc trưng có tính không gian hiệu quả. Trong tầng này có 4 đối tượng chính là: ma trận đầu vào, bộ &lt;strong&gt;filters&lt;/strong&gt;, và &lt;strong&gt;receptive field&lt;/strong&gt;, &lt;strong&gt;feature map&lt;/strong&gt;. Conv layer nhận đầu vào là một ma trận 3 chiều và một bộ filters cần phải học. Bộ filters này sẽ trượt qua từng vị trí trên bức ảnh để tính tích chập (convolution) giữa bộ filter và phần tương ứng trên bức ảnh. Phần tưng ứng này trên bức ảnh gọi là receptive field, tức là vùng mà một neuron có thể nhìn thấy để đưa ra quyết định, và mà trận cho ra bới quá trình này được gọi là feature map. Để hình dung, các bạn có thể tưởng tượng, bộ filters giống như các tháp canh trong nhà tù quét lần lượt qua không gian xung quanh để tìm kiếm tên tù nhân bỏ trốn. Khi phát hiện tên tù nhân bỏ trốn, thì chuông báo động sẽ reo lên, giống như các bộ filters tìm kiếm được đặc trưng nhất định thì tích chập đó sẽ cho giá trị lớn.&lt;/p&gt;
+
+&lt;div class=&quot;img-div&quot;&gt;
+    &lt;img src=&quot;https://media.giphy.com/media/3orif7it9f4phjv4LS/giphy.gif&quot; /&gt;
+&lt;/div&gt;
+
+&lt;p&gt;Với ví dụ ở bên dưới, dữ liệu đầu vào ở là ma trận có kích thước 8x8x1, một bộ filter có kích thước 2x2x1, feature map có kích thước 7x7x1. Mỗi giá trị ở feature map được tính bằng tổng của tích các phần tử tương ứng của bộ filter 2x2x1 với receptive field trên ảnh. Và để tính tất cả các giá trị cho feature map, các bạn cần trượt filter từ trái sáng phải, từ trên xuống dưới. Do đó, các bạn có thể thấy rằng phép convolution bảo toàn thứ tự không gian của các điểm ảnh. ví dụ điểm góc gái của dữ liệu đầu vào sẽ tương ứng với bên một điểm bên góc trái của feature map.&lt;/p&gt;
+
+&lt;div class=&quot;img-div&quot;&gt;
+    &lt;img src=&quot;/images/cnn_covolution_layer.png&quot; /&gt;
+&lt;/div&gt;
+
+&lt;h4 id=&quot;tầng-convolution-như-là-feature-detector&quot;&gt;Tầng convolution như là feature detector&lt;/h4&gt;
+
+&lt;p&gt;Tầng convolution có chức năng chính là phát hiện đặc trưng cụ thể của bức ảnh. Những đặc trưng này bao gồm đặc trưng cơ bản là góc,cạnh, màu sắc, hoặc đặc trưng phức tạp hơn như texture của ảnh. Vì bộ filter quét qua toàn bộ bức ảnh, nên những đặc trưng này có thể nằm ở vị trí bất kì trong bức ảnh, cho dù ảnh bị xoáy trái/phải thì những đặc trưng này vẫn bị phát hiện.&lt;/p&gt;
+
+&lt;p&gt;Ở minh họa dưới, các bạn có một filter 5x5 dùng để phát hiện góc/cạnh với, filter này chỉ có giá trị một tại các điểm tương ứng một góc cong.&lt;/p&gt;
+
+&lt;div class=&quot;img-div&quot;&gt;
+    &lt;img src=&quot;/images/cnn_high_level_feature.png&quot; /&gt;
+&lt;/div&gt;
+
+&lt;p&gt;Dùng filter ở trên trược qua ảnh của nhân vật Olaf trong trong bộ phim Frozen. Chúng ta thấy rằng, chỉ ở những vị trí trên bức ảnh có dạng góc như đặc trưng ở filter thì mới có giá trị lớn trên feature map, những vị trí còn lại sẽ cho giá trị thấp hơn. Điều này có nghĩa là, filter đã phát hiện thành công một dạng góc/cạnh trên dự liệu đầu vào. Tập hơn nhiều bộ filters sẽ cho phép các bạn phát hiện được nhiều loại đặc trưng khác nhau,và giúp định danh được đối tượng.&lt;/p&gt;
+
+&lt;div class=&quot;img-div&quot;&gt;
+    &lt;img src=&quot;/images/cnn_high_level_feature_ex.png&quot; /&gt;
+&lt;/div&gt;
+
+&lt;h4 id=&quot;các-tham-số-của-tầng-convolution-kích-thước-bộ-filter-stride-và-padding&quot;&gt;Các tham số của tầng convolution: Kích thước bộ filter, stride và padding&lt;/h4&gt;
+
+&lt;p&gt;Kích thước bộ filter là một trong những tham số quan trọng nhất của tầng convolution. Kích thước này tỉ lệ thuận với số tham số cần học tại mỗi tầng convolution và là tham số quyết định receptive field của tầng này. Kích thước phổ biến nhất của bộ filter là 3x3.&lt;/p&gt;
+
+&lt;p&gt;Kích thước filter nhỏ được ưu tiên lựa chọn thay kích thước lớn vì những lý do sau đây.&lt;/p&gt;
+
+&lt;table class=&quot;table-striped table&quot;&gt;
+  &lt;thead&gt;
+    &lt;tr&gt;
+      &lt;th&gt;&lt;strong&gt;Filter Nhỏ&lt;/strong&gt;&lt;/th&gt;
+      &lt;th&gt;&lt;strong&gt;Filter Lớn&lt;/strong&gt;&lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;td&gt;Kích thước nhỏ thì mỗi lần nhìn được một vùng nhỏ các pixel&lt;/td&gt;
+      &lt;td&gt;Receptive field lớn&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;Rút trích được đặc trưng có tính cục bộ cao&lt;/td&gt;
+      &lt;td&gt;Các đặc trưng có tính tổng quát hơn&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;Phát hiện được các đặc trưng nhỏ hơn&lt;/td&gt;
+      &lt;td&gt;Bắt được những phần cơ bản của bức ảnh&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;Đặc trưng rút trích được sẽ đa dạng, hữu ích hơn ở tầng sau&lt;/td&gt;
+      &lt;td&gt;Thông ít rút trích được ít đa dạng&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;Giảm kích thước ảnh chậm hơn, do đó cho phép mạng sâu hơn&lt;/td&gt;
+      &lt;td&gt;Giảm kích thước ảnh nhanh, do đó chỉ cho phép mạng nông&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;Ít trọng số hơn, chia sẻ trọng số tốt hơn&lt;/td&gt;
+      &lt;td&gt;Chia sẽ trọng số ít ý nghĩa hơn&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;p&gt;Kích thước filter của tầng convolution hầu hết đều là số lẻ, ví dụ như 3x3 hay 5x5. Với kích thước filter lẻ, các giá trị của feature map sẽ xác định một tâm điểm ở tầng phía trước. Nếu các bạn chọn filter có kích thước 2x2, 4x4 thì chúng ta sẽ gặp khó khăn khi muốn tìm vị trí tương ứng của các giá trị feature map trên không gian ảnh.&lt;/p&gt;
+
+&lt;div class=&quot;img-div&quot;&gt;
+    &lt;img src=&quot;/images/cnn_filter_size.png&quot; /&gt;
+&lt;/div&gt;
+
+&lt;p&gt;Ở những trường hợp đặt biệt như filter có kích thước 1x1, hay có kích thước bằng với ma trận đầu vào, tầng convolution có ý nghĩa rất thú vị. Khi có kích thước 1x1, tầng convolution xem mỗi điểm như một đặc trưng riêng biệt, có chức năng giảm chiều (tăng chiều) khi số lượt feature map ở tầng sau nhỏ hơn (lớn hơn) tầng trước. Filter 1x1 đã được sử dụng trong kiến trúc mạng phổ biến như Inception networks. Trong khi đó, filter với kích thước bằng ảnh đầu vào, tầng convolution có chức năng y hệt fully connected layer.&lt;/p&gt;
+
+&lt;p&gt;Ngoài ra, các bạn cần lưu ý tham số stride, thể hiện số pixel bạn cần phải dịch chuyển mỗi khi trượt bộ filter qua bức ảnh. Ở ví dụ bên dưới, với tham số stride bằng 2, bộ filter sẽ dịch chuyển 2 pixel mỗi lần áp dụng phép convolution.&lt;/p&gt;
+
+&lt;div class=&quot;img-div&quot;&gt;
+    &lt;img src=&quot;/images/cnn_strides.gif&quot; /&gt;
+&lt;/div&gt;
+
+&lt;p&gt;Khi các bạn áp dụng phép convolution thì ma trận đầu vào sẽ có nhỏ dần đi, do đó số layer của mô hình CNN sẽ bị giới hạn, và không thể xậy đựng deep nets mong muốn. Để giải quyết tình trạng này, các bạn cần padding vào ma trận đầu vào để đảm bảo kích thước đầu ra sau mỗi tầng convolution là không đổi. Do đó có thể xậy dựng được mô hình với số tầng convolution lớn tùy ý. Một cách đơn giản và phổ biến nhất để padding là sử dụng hàng số 0, ngoài ra các bạn cũng có thể sử dụng reflection padding hay là symmetric padding.&lt;/p&gt;
+
+&lt;div class=&quot;img-div&quot;&gt;
+    &lt;img src=&quot;/images/cnn_padding.png&quot; /&gt;
+&lt;/div&gt;
+
+&lt;h3 id=&quot;nonlinear-layer&quot;&gt;Nonlinear Layer&lt;/h3&gt;
+
+&lt;p&gt;ReLU (Rectified Linear Units, f = max(0, x)) là hàm kích hoạt phổ biến nhất cho CNN tại thời điểm của bài viết, được giới thiệu bởi Geoffrey E. Hinton năm 2010. Trước khi hàm ReLU được áp dụng thì những hàm như sigmoid hay tanh mới là những hàm được sử dụng phổ biến. Hàm ReLU được ưa chuộng vì tính toán đơn giản, giúp hạn chế tình trạng vanishing gradient, và cũng cho kết quả tốt hơn. ReLU cũng như những hàm kích hoạt khác, được đặt ngay sau tầng convolution, ReLU sẽ gán những giá trị âm bằng 0 và giữ nguyên giá trị của đầu vào khi lớn hơn 0.&lt;/p&gt;
+
+&lt;p&gt;ReLU cũng có một số vấn đề tiềm ẩn như không có đạo hàm tại điểm 0, giá trị của hàm ReLU có thể lớn đến vô cùng và nếu chúng ta không khởi tạo trọng số cẩn thận, hoặc khởi tạo learning rate quá lớn thì những neuron ở tầng này sẽ rơi vào trạng thái chết, tức là luôn có giá trị &amp;lt; 0.&lt;/p&gt;
+
+&lt;div class=&quot;img-div&quot;&gt;
+    &lt;img src=&quot;/images/cnn_relu.png&quot; /&gt;
+&lt;/div&gt;
+
+&lt;h3 id=&quot;pooling-layer&quot;&gt;Pooling Layer&lt;/h3&gt;
+
+&lt;p&gt;Sau hàm kích hoạt, thông thường chúng ta sử dụng tầng pooling. Một số loại pooling layer phổ biến như là max-pooling, average pooling, với chức năng chính là giảm chiều của tầng trước đó. Với một pooling có kích thước 2x2, các bạn cần phải trược filter 2x2 này trên những vùng ảnh có kích thước tương tự rồi sau đó tính max, hay average cho vùng ảnh đó.&lt;/p&gt;
+
+&lt;div class=&quot;img-div&quot;&gt;
+    &lt;img src=&quot;/images/cnn_pooling_layer.png&quot; /&gt;
+&lt;/div&gt;
+
+&lt;p&gt;Ý tương đằng sau tầng pooling là vị trí tuyết đối của những đặc trưng trong không gian ảnh không còn cần cần thiết, thay vào đó vị trí tương đối giữ các đặc trưng đã đủ để phân loại đối tượng. Hơn giảm tầng pooling có khả năng giảm chiều cực kì nhiều, làm hạn chế overfit, và giảm thời gian huấn luyện tốt.&lt;/p&gt;
+
+&lt;h3 id=&quot;fully-connected-layer&quot;&gt;Fully Connected Layer&lt;/h3&gt;
+
+&lt;p&gt;Tầng cuối cùng của mô hình CNN trong bài toán phân loại ảnh là tầng fully connected layer. Tầng này có chức năng chuyển ma trận đặc trưng ở tầng trước thành vector chứa xác suất của các đối tượng cần được dự đoán. Ví dụ, trong bài toán phân loại số viết tay MNIST có 10 lớp tương ứng 10 số từ 0-1, tầng fully connected layer sẽ chuyển ma trận đặc trưng của tầng trước thành vector có 10 chiều thể hiện xác suất của 10 lớp tương ứng.&lt;/p&gt;
+
+&lt;p&gt;Và cuối cùng, quá trình huấn luyện mô hình CNN cho bài toán phân loại ảnh cũng tương tự như huấn luyện các mô hình khác. Chúng ta cần có hàm độ lỗi để tính sai số giữ dự đoán của mô hình và nhãn chính xác, cũng như sử dụng thuật toán backpropagation cho quá trình cập nhật trọng số.&lt;/p&gt;
+
+&lt;h3 id=&quot;source-code&quot;&gt;Source code&lt;/h3&gt;
+
+&lt;p&gt;Mình cung cấp file notebook cho các bạn mới bắt đầu tìm hiểu và tập huấn luyện mô hình CNN cho bài toán phân loại ảnh. File này chứa hướng dẫn về mô hình CNN cũng như cách sử dụng tensorflow eager execution để xây dựng model cho dữ liệu &lt;a href=&quot;https://challenge.zalo.ai/&quot;&gt;ZaloAI Landmark &lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;Các bạn hãy tải về tại &lt;a href=&quot;https://github.com/pbcquoc/cnn&quot;&gt;đây&lt;/a&gt; nhé.&lt;/p&gt;</content><author><name></name></author><summary type="html">Giới Thiệu Convolutional Neural Networks (CNN) là một trong những mô hình deep learning phổ biến nhất và có ảnh hưởng nhiều nhất trong cộng đồng Computer Vision. CNN được dùng trong trong nhiều bài toán như nhân dạng ảnh, phân tích video, ảnh MRI, hoặc cho bài các bài của lĩnh vự xử lý ngôn ngữ tự nhiên,và hầu hết đều giải quyết tốt các bài toán này. CNN cũng có lịch sử khá lâu đời. Kiến trúc gốc của mô hình CNN được giới thiệu bởi một nhà khoa học máy tính người Nhật vào năm 1980. Sau đó, năm 1998, Yan LeCun lần đầu huấn luyện mô hình CNN với thuật toán backpropagation cho bài toán nhận dạng chữ viết tay. Tuy nhiên, mãi đến năm 2012, khi một nhà khoa học máy tính người Ukraine Alex Krizhevsky (đệ của Geoffrey Hinton) xây dựng mô hình CNN (AlexNet) và sử dụng GPU để tăng tốc quá trình huấn luyện deep nets để đạt được top 1 trong cuộc thi Computer Vision thường niên ImageNet với độ lỗi phân lớp top 5 giảm hơn 10% so với những mô hình truyền thống trước đó, đã tạo nên làn sóng mãnh mẽ sử dụng deep CNN với sự hỗ trợ của GPU để giải quyết càng nhiều các vấn đề trong Computer Vision.</summary></entry><entry><title type="html">Nhận Dạng Chữ Tiếng Việt - Vietnamese OCR</title><link href="http://localhost:4000/vietnamese-ocr/" rel="alternate" type="text/html" title="Nhận Dạng Chữ Tiếng Việt - Vietnamese OCR" /><published>2018-10-31T00:00:00+07:00</published><updated>2018-10-31T00:00:00+07:00</updated><id>http://localhost:4000/vietnamese-ocr</id><content type="html" xml:base="http://localhost:4000/vietnamese-ocr/">&lt;h3 id=&quot;giới-thiệu&quot;&gt;Giới thiệu&lt;/h3&gt;
+&lt;p&gt;Nhận dạng chữ viết tay là một trong những bài toán rất thú vị, với đầu vào là một ảnh chứa chữ và đầu ra là chữ chứa trong ảnh đó. Bài toán này tương đối khó đối với chữ viết tay, cộng với viết bộ dữ liệu việt nam tương đối hiếm có. Lần này, mình sẽ chia sẽ hướng tiếp cận mà team mình đã sử dụng trong cuộc thi do Cinnamon tổ chức, nhờ những cách sử lý hợp lý mà team mình đã đạt đượt top 1 trong phase 1 của cuộc thi này. Nhưng mà cuộc thì này tổ chức cũng dài hơi, làm những thí sinh hơi nản. (tầm 2 tháng với phần thi + bootcamp). Sơ qua về một chút ứng dụng của OCR. Mình thấy có 2 ứng dụng khá nổi tiếng là Google Translate, với GotIt của Hùng Trần.&lt;/p&gt;
+
+&lt;h3 id=&quot;dữ-liệu&quot;&gt;Dữ liệu&lt;/h3&gt;
+&lt;p&gt;Dữ liệu của bài toán này là chỉ có text-line không có scene text nên vấn đề đơn giản hơn nhiều so với việc phải detect được chữ trên ảnh có background như ngoài thực tế. 
+&lt;img src=&quot;/images/ocr_dataset.png&quot; alt=&quot;dữ liệu&quot; /&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;chuẩn-bị-dữ-liệu&quot;&gt;Chuẩn bị dữ liệu&lt;/h2&gt;
+&lt;p&gt;Đối với văn bản scan thì việc tiền xử lý như remove noise,background là cực kì quan trọng và ảnh hưởng khá nhiểu đến độ chính xác của bài toán. Để remove noise và background thì các bạn có thể sử dụng kmean để cluster bức ảnh ra 2 màu chủ đạo trắng và đen rồi sau đó binary ảnh dựa vào kết quả cluster. Trong quá trình xử lý các bạn có thể sử dụng &lt;a href=&quot;https://github.com/mauvilsa/imgtxtenh&quot;&gt;tool&lt;/a&gt; này nhé&lt;/p&gt;
+
+&lt;div class=&quot;img-div&quot;&gt;
+    &lt;img src=&quot;/images/ocr_process_step.png&quot; /&gt;
+&lt;/div&gt;
+
+&lt;h2 id=&quot;mô-hình&quot;&gt;Mô hình&lt;/h2&gt;
+&lt;p&gt;Dữ liệu đã chuẩn bị xong thì đến phần model. Môt trong những mô hình được hay sử dụng là CRNN, tuy nhiên mô hình mình sử dụng thêm vào cơ chế attention cho phép model lựa chọn vùng ảnh mong muốn để phát sinh ra text. Cơ chế attention được sử dụng rất nhiều trong machine translation. Mình sẽ có một bài về cơ chế này,tuy nhiên các bạn có thể tham khảo &lt;a href=&quot;http://www.wildml.com/2016/01/attention-and-memory-in-deep-learning-and-nlp/&quot;&gt;tại đây&lt;/a&gt;.&lt;/p&gt;
+
+&lt;div class=&quot;img-div&quot;&gt;
+    &lt;img src=&quot;/images/ocr_crnn.png&quot; /&gt;
+&lt;/div&gt;
+
+&lt;p&gt;Đối dữ liệu là ảnh thì chúng ta sẽ dùng mô hình CNN để extract feature.  Ở đây, mình dùng VGG16 nhé. Trong model hình này, chúng ta nên lưu ý số tầng pooling, mình chỉ sử dụng 4 tầng pooling của VGG16, mỗi tầng pooling sẽ có kích thước 2x2,đồng thời bỏ hết tất cả các tầng fully connected cuối cùng, do đó output của VGG16 là một tập các feature maps, mỗi pixel trên feature tương ứng vùng 16x16 trên bức ảnh đầu vào.&lt;/p&gt;
+
+&lt;div class=&quot;img-div&quot;&gt;
+    &lt;img src=&quot;/images/ocr_pooling_size.png&quot; /&gt;
+&lt;/div&gt;
+
+&lt;p&gt;Việc chọn kích thước và số tầng pooling này cực kì quan trọng vì nó ảnh hưởng đến số pixel mà mỗi timestep nhìn thấy được.Nếu các bạn chọn kính thước tầng pooling size quá lớn sẽ dần đến việc một step sẽ bao gồm nhiểũ chữ trong ảnh do đó mô hình sẽ không nhận dạng được.&lt;/p&gt;
+
+&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;n&quot;&gt;base_model&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;applications&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;VGG16&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;weights&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'imagenet'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;include_top&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;bp&quot;&gt;False&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;Với ảnh đầu vào có kích thước 1280x60 thì output của vgg16 là (nmaps, w, h) = …, mỗi dòng tương ứng với chiều w thì tương ứng với một timstep cho tầng LSTM.&lt;/p&gt;
+
+&lt;h3 id=&quot;visual-attention&quot;&gt;Visual attention&lt;/h3&gt;
+&lt;p&gt;Với mô hình CRNN, kết quả của vgg được truyền trực tiếp vào mô hình LSTM, tuy nhiên, với thực nghiệp của mình khi stack thêm một lớp attention ở giữa tầng vgg và LSTM sẽ cho kết quả nhận dạng tốt hơn. Attention cho phép model của chúng ta được thoải mái lựa chọn kết hợp thông tin giữa các timestep khác nhau để tổng hợp lại và sử dụng đặc trưng tổng hợp này làm đầu vào để nhận dạng chữ cái. Cụ thể vector context được tổng hợp tại mỗi timestep như sau:&lt;/p&gt;
+
+&lt;div class=&quot;row&quot;&gt;
+&lt;span class=&quot;col-sm-12 text-center&quot; id=&quot;aligment_model&quot; style=&quot;font-size:150%&quot;&gt;&lt;/span&gt;
+&lt;/div&gt;
+
+&lt;p&gt;Đầu tiên ta cần tính e với e chính là output của Aligment Model, một dạng feedforward nets với input là trạng thái của networks hiện tại&lt;/p&gt;
+
+&lt;div class=&quot;row&quot;&gt;
+&lt;span class=&quot;col-sm-12 text-center&quot; id=&quot;aligment_score&quot; style=&quot;font-size:150%&quot;&gt;&lt;/span&gt;
+&lt;/div&gt;
+
+&lt;p&gt;Sau đó ta tính attention score tại mỗi timestep bằng hàm softmax vì chúng ta mong muốn tổng attention score bằng 1&lt;/p&gt;
+
+&lt;div class=&quot;row&quot;&gt;
+&lt;span class=&quot;col-sm-12 text-center&quot; id=&quot;context_vector&quot; style=&quot;font-size:150%&quot;&gt;&lt;/span&gt;
+&lt;/div&gt;
+
+&lt;p&gt;Cuối cùng, context vector là weighted average của trạng thái ẩn với attention score.&lt;/p&gt;
+
+&lt;script&gt;
+var alignment_model = $(&quot;#aligment_model&quot;);
+katex.render(&quot;e_{ij}=a(s_{i-1}, h_{j})&quot;, alignment_model[0]);
+
+var alignment_score = $(&quot;#aligment_score&quot;);
+katex.render(&quot;\alpha_{ij} = softmax(e_{ij})&quot;, alignment_score[0]);
+
+var context_vector = $(&quot;#context_vector&quot;);
+katex.render(&quot;c_{i} =\\sum_{j=1}^{T_{x}}\alpha_{ij}*h_{j}&quot;, context_vector[0]);
+&lt;/script&gt;
+
+&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;k&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;attention_rnn&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;inputs&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;):&lt;/span&gt;
+    &lt;span class=&quot;c1&quot;&gt;# inputs.shape = (batch_size, time_steps, input_dim)
+&lt;/span&gt;    &lt;span class=&quot;n&quot;&gt;input_dim&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;int&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;inputs&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;shape&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;])&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;timestep&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;int&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;inputs&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;shape&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;])&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;a&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Permute&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;((&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;))(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;inputs&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;a&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Dense&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;timestep&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;activation&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'softmax'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;a&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;//&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Alignment&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Model&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Softmax&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;a&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Lambda&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;lambda&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;x&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;K&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;mean&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;x&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;axis&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;),&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;name&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'dim_reduction'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;a&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;a&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;RepeatVector&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;input_dim&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;a&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;a_probs&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Permute&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;((&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;),&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;name&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'attention_vec'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;a&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;output_attention_mul&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;multiply&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;([&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;inputs&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;a_probs&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;],&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;name&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'attention_mul'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;//&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Weighted&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Average&lt;/span&gt; 
+    &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;output_attention_mul&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;h3 id=&quot;lstm&quot;&gt;LSTM&lt;/h3&gt;
+&lt;p&gt;Với các vector context được tính ở tầng Attention được sử dụng là đầu vào cho mô hình LSTM. Tại mỗi timestep, chúng ta dự đoán từ tại thời điểm đó. Các timestep liên tục có thể dữ đoán cùng một từ.&lt;/p&gt;
+&lt;div class=&quot;img-div&quot;&gt;
+    &lt;img src=&quot;/images/ocr_lstm.png&quot; /&gt;
+&lt;/div&gt;
+&lt;h3 id=&quot;connectionist-temporal-classification-loss&quot;&gt;Connectionist Temporal Classification loss&lt;/h3&gt;
+&lt;p&gt;Với dữ liệu huấn luyện, chúng ta có nhãn là một đoạn text tương ứng với chữ trong bức ảnh đó. Chúng ta không có nhãn cụ thể tại mỗi thời điểm từ xuất hiện là gì tương ứng với timestep trong mô hình LSTM, do đó chúng ta không thể dùng cross entropy loss để tính độ lỗi mà phải dùng CTC loss trong bài toán bài.&lt;/p&gt;
+
+&lt;h4 id=&quot;encoding-ground-truth&quot;&gt;Encoding ground truth&lt;/h4&gt;
+&lt;p&gt;CTC loss giải quyết vấn đề này theo cách rất là thông minh, cụ thể chúng ta sẽ thử tất cả các alignment của ground truth và tính score của tổng tất cả alignment. Alignment của ground truth được phát sinh bằng cách thêm blank token (-) và lặp lại bất kì kí tự nào trong ground truth.&lt;/p&gt;
+
+&lt;p&gt;Ví dụ ta có ground truth là: sun và có mô hình LSTM của chúng ta dự toán 4 timesteps. Thì những alignment đúng của ground truth là:&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;sun -&amp;gt; -sun, s-un, su-n, sun-&lt;/li&gt;
+  &lt;li&gt;sun -&amp;gt; suun, ssun, sunn&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Đới với những từ có 2 kí tự liên tục giống nhau, chúng ta sẽ thêm blank token để ở giữa để tạo ra một alignment đúng. Ví dụ với kí tự too. Các alignment đúng có thể là:&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;too -&amp;gt; -to-o, tto-o&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Nhưng ko thể là tooo.&lt;/p&gt;
+&lt;h4 id=&quot;decoding-text&quot;&gt;Decoding text&lt;/h4&gt;
+&lt;p&gt;Mô hình của chúng ta sẽ học để predict những alignment trên, sau đó chúng ta phải decode để đưa ra chuỗi dự đoán cuối cùng bằng cách gộp những kí tự lặp lại liên tiếp nhau thành một kí tự và sau đó xóa hết tất cả blank token.
+Ví dụ với alignment tto-o thì sau khi decode chúng ta sẽ có too bằng cách gộp 2 kí tự ‘t’ lại với nhau và xóa ‘-‘.&lt;/p&gt;
+
+&lt;h4 id=&quot;tính-ctc-loss&quot;&gt;Tính CTC loss&lt;/h4&gt;
+&lt;p&gt;Với mỗi grouth truth chúng ta có nhiều alignment, bất kì alignment nào được dự đoán đều là một dự đoán đúng. Do đó, hàm loss ta cần tối ưu chính là tổng của tất cả các alignment.&lt;/p&gt;
+
+&lt;div class=&quot;img-div&quot;&gt;
+    &lt;img src=&quot;/images/ocr_ctc_loss_calc.png&quot; /&gt;
+&lt;/div&gt;
+&lt;p&gt;Với từ sun, ta có tổng 7 alignments đúng ở trên. Do đó theo model, xác suất từ sun xuất hiện là&lt;/p&gt;
+&lt;div class=&quot;row&quot;&gt;
+&lt;span class=&quot;col-sm-12 text-center&quot;&gt;
+    p('sun') = p('-sun') + p('s-un') + p('su-n') + p('sun-') + p('ssun') + p('suun') + p('sunn') = 0.2186
+&lt;/span&gt;
+&lt;/div&gt;
+&lt;p&gt;Hàm loss của chúng ta sẽ là 1 - p(‘sun’)&lt;/p&gt;
+
+&lt;h3 id=&quot;word-beam-search&quot;&gt;Word Beam Search&lt;/h3&gt;
+&lt;p&gt;Chúng ta có thể lựa chọn câu được phát sinh bằng best path, hoặc có thể bằng word beam search. Đối với best path, tại mỗi thời điểm chúng ta lựa chọn từ có xác suất lớn nhất. Tuy nhiên đối với cách này,câu được phát sinh có thể không phải là câu có xác suất cao nhất. Thay vào đó,chúng ta có thể sử dụng beam search để giữ tại N câu có xác suất lớn theo theo best path rồi cuối cùng câu được chọn sẽ là câu có sác xuất cao nhất trong N câu đó.&lt;/p&gt;
+
+&lt;p&gt;Đối với bài toán OCR, mỗi timestep sẽ phát sinh một kí tự do đó từ được phát sinh có thể không nằm trong từ điển. Đối trường trường hợp này, chúng ta có thể sử dụng một số phương phát post process để xử lý câu được phát sinh. Đơn giản, chúng ta sử dụng edit distance để so sánh khoảng cách 2 từ, và thay thế từ không nằm trong từ điển bằng từ có edit distance thấp nhất. Hay phức tạp hơn, chúng ta có thể dùng language model để sửa lỗi câu được phát sinh.
+Đối với python/tensorflow, các bạn có thể dùng &lt;a href=&quot;https://github.com/githubharald/CTCDecoder&quot;&gt;thư viện&lt;/a&gt; sau để phát sinh câu từ model&lt;/p&gt;
+
+&lt;h3 id=&quot;ocr-data-augmentation&quot;&gt;OCR Data Augmentation&lt;/h3&gt;
+&lt;p&gt;Trong cuộc thi này, tập dữ liệu mà BTC cung cấp chỉ có 2000 mẫu, do đó để huấn luyện model chúng ta cần sử dụng một số phương pháp để tăng dữ liệu.&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;Xoay hay dịch chuyển một ít bức ảnh.&lt;/li&gt;
+  &lt;li&gt;Sử dụng elastic transform&lt;/li&gt;
+  &lt;li&gt;Random erasor một phần của bức ảnh.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;div class=&quot;img-div&quot;&gt;
+    &lt;img src=&quot;/images/ocr_aug.png&quot; /&gt;
+&lt;/div&gt;
+
+&lt;h2 id=&quot;kết-quả&quot;&gt;Kết quả&lt;/h2&gt;
+&lt;p&gt;Mình train 5 folds ,mỗi fold mất khoảng 8 tiếng để chạy. Sau khi chay khoảng 70-80 epochs thì WER khoảng 0.1x. Theo mình thấy thì kết quả tương đối chính xác. Có vẻ bộ dataset hơi dễ :))&lt;/p&gt;
+&lt;div class=&quot;img-div&quot;&gt;
+    &lt;img src=&quot;/images/ocr_result.jpg&quot; /&gt;
+&lt;/div&gt;
+
+&lt;h2 id=&quot;download-dataset&quot;&gt;Download dataset&lt;/h2&gt;
+&lt;p&gt;Bộ dataset này là của &lt;a href=&quot;http://cinnamon.is/vi/&quot;&gt;Cinnamon&lt;/a&gt;. Mình không chịu trách nhiệm khi các bạn sử dụng sai mục đích.&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;https://drive.google.com/drive/folders/1Qa2YA6w6V5MaNV-qxqhsHHoYFRK5JB39&quot;&gt;OCR&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;</content><author><name></name></author><summary type="html">Giới thiệu Nhận dạng chữ viết tay là một trong những bài toán rất thú vị, với đầu vào là một ảnh chứa chữ và đầu ra là chữ chứa trong ảnh đó. Bài toán này tương đối khó đối với chữ viết tay, cộng với viết bộ dữ liệu việt nam tương đối hiếm có. Lần này, mình sẽ chia sẽ hướng tiếp cận mà team mình đã sử dụng trong cuộc thi do Cinnamon tổ chức, nhờ những cách sử lý hợp lý mà team mình đã đạt đượt top 1 trong phase 1 của cuộc thi này. Nhưng mà cuộc thì này tổ chức cũng dài hơi, làm những thí sinh hơi nản. (tầm 2 tháng với phần thi + bootcamp). Sơ qua về một chút ứng dụng của OCR. Mình thấy có 2 ứng dụng khá nổi tiếng là Google Translate, với GotIt của Hùng Trần.</summary></entry></feed>
