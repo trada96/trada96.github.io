@@ -1,10 +1,12 @@
 ---
-layout: default
+layout: page
+permalink: /bigdata/
 ---
 
 <div class="posts">
   {% for post in site.posts %}
-    {% if post.state == "publish" %}
+  {% if post.group == "big_data" %}
+  {% if post.state == "publish" %}
     <article class="post">
 
       <h1><a href="{{ site.baseurl }}{{ post.url }}">{{ post.title }}</a></h1>
@@ -15,6 +17,7 @@ layout: default
 
       <a href="{{ site.baseurl }}{{ post.url }}" class="read-more">Read More</a>
     </article>
-    {% endif %}
+  {% endif %}
+  {% endif %}
   {% endfor %}
 </div>

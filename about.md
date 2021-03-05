@@ -4,12 +4,8 @@ title: About
 permalink: /about/
 ---
 
-Some information about you!
+Blog này sinh ra mục đích phuc vụ cá nhân trên con đường trở thành data scientist. 
 
-### More Information
+Nếu có bất cứ vấn đề gì hãy liên lạc với tôi qua email : tuananhhd5596@gmail.com
 
-A place to include any other types of information that you'd like to include about yourself.
-
-### Contact me
-
-[email@domain.com](mailto:email@domain.com)
+Xin cảm ơn !

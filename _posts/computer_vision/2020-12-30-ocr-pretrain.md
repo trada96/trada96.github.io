@@ -2,6 +2,7 @@
 layout: post 
 title: Hướng Dẫn Cài Đặt Và Sử Dụng Các Mô Hình OCR cho Tiếng Việt 
 group: computer_vision
+state: publish
 ---
 
 Cài đặt các mô hình pretrained cho tiếng việt như EasyOCR, TranformerOCR, Tesseract, ...
