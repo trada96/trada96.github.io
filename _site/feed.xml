@@ -1,10 +1,89 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.9.0">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2021-03-05T16:39:12+07:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">Tuan Anh</title><subtitle>AI Engineer/ Data Scientist</subtitle><entry><title type="html">Elasticsearch</title><link href="http://localhost:4000/elasticsearch/" rel="alternate" type="text/html" title="Elasticsearch" /><published>2021-03-03T00:00:00+07:00</published><updated>2021-03-03T00:00:00+07:00</updated><id>http://localhost:4000/elasticsearch</id><content type="html" xml:base="http://localhost:4000/elasticsearch/"></content><author><name></name></author><summary type="html"></summary></entry><entry><title type="html">Tìm hiểu cơ bản về Hadoop - Big Data</title><link href="http://localhost:4000/hadoop/" rel="alternate" type="text/html" title="Tìm hiểu cơ bản về Hadoop - Big Data" /><published>2021-03-03T00:00:00+07:00</published><updated>2021-03-03T00:00:00+07:00</updated><id>http://localhost:4000/hadoop</id><content type="html" xml:base="http://localhost:4000/hadoop/">&lt;p&gt;Bài viết của mình sẽ gồm các phần như sau :&lt;/p&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.9.0">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2021-03-22T17:38:50+07:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">Tuan Anh</title><subtitle>AI Engineer/ Data Scientist</subtitle><entry><title type="html">Elasticsearch</title><link href="http://localhost:4000/elasticsearch/" rel="alternate" type="text/html" title="Elasticsearch" /><published>2021-03-03T00:00:00+07:00</published><updated>2021-03-03T00:00:00+07:00</updated><id>http://localhost:4000/elasticsearch</id><content type="html" xml:base="http://localhost:4000/elasticsearch/"></content><author><name></name></author><summary type="html"></summary></entry><entry><title type="html">Tìm hiểu cơ bản về Hadoop - Big Data</title><link href="http://localhost:4000/hadoop/" rel="alternate" type="text/html" title="Tìm hiểu cơ bản về Hadoop - Big Data" /><published>2021-03-03T00:00:00+07:00</published><updated>2021-03-03T00:00:00+07:00</updated><id>http://localhost:4000/hadoop</id><content type="html" xml:base="http://localhost:4000/hadoop/">&lt;p&gt;Khi bạn học về Big Data, không sớm hay muộn thì bạn sẽ gặp cụm từ Hadoop. Vậy chính xác nó là gì ?&lt;/p&gt;
+
+&lt;p align=&quot;center&quot;&gt;
+  &lt;img src=&quot;/images/hadoop/hadoop.jpg&quot; /&gt;
+&lt;/p&gt;
+
+&lt;p&gt;BigData càng ngày càng thể hiện được tầm quan trọng của nó trong các doanh nghiệp và Hadoop
+cũng được phổ biến hơn để lữu trữ và xử lý dữ liệu đó. Hôm nay mình sẽ tìm hiểu về hadoop.&lt;/p&gt;
+
+&lt;p&gt;Bài viết của mình sẽ gồm các phần như sau :&lt;/p&gt;
 
 &lt;p&gt;&lt;strong&gt;1. Hadoop là gì ?&lt;/strong&gt;&lt;/p&gt;
 
 &lt;p&gt;&lt;strong&gt;2. Hadoop hoạt động như thế nào ?&lt;/strong&gt;&lt;/p&gt;
 
-&lt;p&gt;&lt;strong&gt;3. Sử dụng Hadoop trong trường hợp nào ?&lt;/strong&gt;&lt;/p&gt;</content><author><name></name></author><summary type="html">Bài viết của mình sẽ gồm các phần như sau :</summary></entry><entry><title type="html">Kafka</title><link href="http://localhost:4000/kafka/" rel="alternate" type="text/html" title="Kafka" /><published>2021-03-03T00:00:00+07:00</published><updated>2021-03-03T00:00:00+07:00</updated><id>http://localhost:4000/kafka</id><content type="html" xml:base="http://localhost:4000/kafka/"></content><author><name></name></author><summary type="html"></summary></entry><entry><title type="html">Spark</title><link href="http://localhost:4000/spark/" rel="alternate" type="text/html" title="Spark" /><published>2021-03-03T00:00:00+07:00</published><updated>2021-03-03T00:00:00+07:00</updated><id>http://localhost:4000/spark</id><content type="html" xml:base="http://localhost:4000/spark/"></content><author><name></name></author><summary type="html"></summary></entry><entry><title type="html">Các metric cơ bản thường dùng trong Machine Learning/ Deep Learning</title><link href="http://localhost:4000/metrics/" rel="alternate" type="text/html" title="Các metric cơ bản thường dùng trong Machine Learning/ Deep Learning" /><published>2021-02-18T00:00:00+07:00</published><updated>2021-02-18T00:00:00+07:00</updated><id>http://localhost:4000/metrics</id><content type="html" xml:base="http://localhost:4000/metrics/">&lt;p&gt;Nếu bạn là người đã và đang tìm hiểu về ML/DL thì chắc hẳn sẽ nghe qua cụm từ “metric” hay nghe đâu đó là
+&lt;p&gt;&lt;strong&gt;3. Sử dụng Hadoop trong trường hợp nào ?&lt;/strong&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;1-hadoop-là-gì-&quot;&gt;1. Hadoop là gì ?&lt;/h2&gt;
+
+&lt;p&gt;Hadoop là một Apache framwork mã nguồn mở viết bằng Java cho phép phát triển các 
+ứng dụng phân tán để lưu trữ và quản lý các tập dữ liệu lớn một cách miễn phí.&lt;/p&gt;
+
+&lt;p&gt;Nó được thiết kế để mở rộng quy mô từ một máy chủ đơn sang hàng ngàn máy tính khác 
+có tính toán và lưu trữ cục bộ (local computation and strorage ). Hadoop được 
+phát triển từ các công bố của Google về mô hình Map-Reduce và hệ thống file phân tán 
+GFS, cung cấp môi trường song song để thực thi tác vụ Map- Reduce.&lt;/p&gt;
+
+&lt;p&gt;Hadoop nhờ có cơ chế streaming nên có thể phát triển trên các ứng dụng phân tán bằng cả java 
+hay các ngôn ngữ khác nhự C++, Python,…&lt;/p&gt;
+
+&lt;h3 id=&quot;2-tác-dụng-của-hadoop&quot;&gt;2 Tác dụng của Hadoop&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Xử lý và làm việc với khối lượng dữ liệu khổng lồ tính bằng Petabyte&lt;/li&gt;
+  &lt;li&gt;Xử lý trong môi trường dữ liệu phân tán, dữ liệu lưu trữ ở nhiều phần cuwngsg khác nhau,
+yêu cầu xử lý đồng b&lt;/li&gt;
+  &lt;li&gt;Các lỗi xuất hiện thương xuyên&lt;/li&gt;
+  &lt;li&gt;Băng Thông giữa các phần cứng vật lý chứa dữ liệu có giới hạn&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;kiến-trúc-của-hadoop&quot;&gt;Kiến trúc của Hadoop&lt;/h3&gt;
+
+&lt;p&gt;Hadoop có 2 thành phần chính:&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;Hadoop MapReduce là cách chia 1 vấn đề dữ liệu lớn hơn thành các đoạn nhỏ hơn và phân 
+tán nó trên nhiều máy chủ. Mỗi máy chủ có 1 tập tài nguyên rieng và máy chủ xử lý dữ liệu
+tren&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;hadoop&quot;&gt;Hadoop&lt;/h3&gt;
+
+&lt;p&gt;Hadoop là một open-source framework được sử dụng cho việc lưu trữ dữ liệu và chạy các ứng
+dụng được phân cụm trên phần cứng. Nó cung cấp lưu trữ dư liệu lớn cho bất kì loại dữ liệu
+nào, ức mạnh xử lý to lớn và khả năng xử lý các tác vụ hoặc công việc đồng thời hầu như không giới hạn.&lt;/p&gt;
+
+&lt;h1 id=&quot;tại-sao-hadoop-lại-quan-trọng&quot;&gt;Tại sao Hadoop lại quan trọng&lt;/h1&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;Có khả năng lưu trữ và xử lý một lượng bất kì loại dữ liệu nào một cách nhanh chóng.
+Cùng với việc gia tăng khối lượng và sự đa dạng dữ liệu, đặc biệt là dữ liệu mạng xã hội,
+hay dữ liệu phục vụ cho DS, IOT,… Do đó nên hadoop càng ngày càng được ưa chuộng.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Khả năng tính toán, Mô tình xử lý phân tán của Hadoop cho phép xử lý dữ liệu nhanh chóng.
+Bạn càng sử dụng nhiều node, bạn càng có nhiều sức mạnh để xử lý.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Khả năng chịu lỗi. Xử lý dữ liệu và ứng dụng được bảo vệ để chống lại lỗi phần cứng.
+Nếu một nút bị hỏng, jobs sẽ được tự động được chuyển hướng đến các nút khác để đảm bảo
+điện toán phân tán không thất bại. Nhiều bản sao của tất cả dữ liệu được lưu trữ tự 
+động&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Linh hoạt: Không giống như các cơ sở dữ liệu quan hệ truyền thống, bạn không phải tiền 
+xử lý dữ liệu trước khi lưu trữ nó. Ban có thể lưu trữ nhiều dữ liệu tùy ý như bạn muốn và quyết 
+định sử dụng chúng như thế naò sau. Bao gồm cả dữ liệu phi cấu trúc như ảnh, text và videos.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;Chi phí thấp: Bở vì nó là open source và sử dụng phân cứng để lưu trữ dữ liệu lớn.&lt;/li&gt;
+  &lt;li&gt;Scalability: Có thể dễ dàng mở rộng hệ thống để xử lý nhiều dữ liệu hơn đơn giản bằng 
+cách thêm các nodes.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h1 id=&quot;những-thách-thức-khi-sử-dụng-hadoop&quot;&gt;Những thách thức khi sử dụng Hadoop&lt;/h1&gt;
+
+&lt;p&gt;MapReduce không tốt kết nối không tốt với tất cả vấn đề:&lt;/p&gt;</content><author><name></name></author><summary type="html">Khi bạn học về Big Data, không sớm hay muộn thì bạn sẽ gặp cụm từ Hadoop. Vậy chính xác nó là gì ?</summary></entry><entry><title type="html">Kafka</title><link href="http://localhost:4000/kafka/" rel="alternate" type="text/html" title="Kafka" /><published>2021-03-03T00:00:00+07:00</published><updated>2021-03-03T00:00:00+07:00</updated><id>http://localhost:4000/kafka</id><content type="html" xml:base="http://localhost:4000/kafka/"></content><author><name></name></author><summary type="html"></summary></entry><entry><title type="html">Spark</title><link href="http://localhost:4000/spark/" rel="alternate" type="text/html" title="Spark" /><published>2021-03-03T00:00:00+07:00</published><updated>2021-03-03T00:00:00+07:00</updated><id>http://localhost:4000/spark</id><content type="html" xml:base="http://localhost:4000/spark/"></content><author><name></name></author><summary type="html"></summary></entry><entry><title type="html">Các metric cơ bản thường dùng trong Machine Learning/ Deep Learning</title><link href="http://localhost:4000/metrics/" rel="alternate" type="text/html" title="Các metric cơ bản thường dùng trong Machine Learning/ Deep Learning" /><published>2021-02-18T00:00:00+07:00</published><updated>2021-02-18T00:00:00+07:00</updated><id>http://localhost:4000/metrics</id><content type="html" xml:base="http://localhost:4000/metrics/">&lt;p&gt;Nếu bạn là người đã và đang tìm hiểu về ML/DL thì chắc hẳn sẽ nghe qua cụm từ “metric” hay nghe đâu đó là
 “mô hình này có độ chính xác 96%”, “F1-score của model đạt 91%”, vv. Vậy nó là gì,
 có tác dụng gì, có những loại nào, thì sau đây hãy cùng nhau tìm hiểu về nó nha.&lt;/p&gt;
 
