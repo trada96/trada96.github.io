@@ -90,19 +90,18 @@
 </p>
 
 <p>BigData càng ngày càng thể hiện được tầm quan trọng của nó trong các doanh nghiệp và Hadoop
-cũng được phổ biến hơn để lữu trữ và xử lý dữ liệu đó. Hôm nay mình sẽ tìm hiểu về hadoop.</p>
+cũng được phổ biến hơn để lữu trữ và xử lý dữ liệu đó. Vậy nên hôm nay chúng ta sẽ cùng nhau tìm hiểu về hadoop.</p>
 
 <p>Bài viết của mình sẽ gồm các phần như sau :</p>
 
-<p><strong>1. Hadoop là gì ?</strong></p>
-
-<p><strong>2. Hadoop hoạt động như thế nào ?</strong></p>
-
-<p><strong>3. Sử dụng Hadoop trong trường hợp nào ?</strong></p>
+<p><strong>1. Hadoop là gì ?</strong>
+<strong>2. Tại sao Hadoop lại quan trọng ?</strong>
+<strong>3. Các thành phần của Hadoop ?</strong>
+<strong>4. Nhược điểm của Hadoop ?</strong></p>
 
 <h2 id="1-hadoop-là-gì-">1. Hadoop là gì ?</h2>
 
-<p>Hadoop là một Apache framwork mã nguồn mở viết bằng Java cho phép phát triển các 
+<p>Hadoop là một Apache framwork mã nguồn mở cho phép phát triển các 
 ứng dụng phân tán để lưu trữ và quản lý các tập dữ liệu lớn một cách miễn phí.</p>
 
 <p>Nó được thiết kế để mở rộng quy mô từ một máy chủ đơn sang hàng ngàn máy tính khác 
@@ -110,41 +109,17 @@ có tính toán và lưu trữ cục bộ (local computation and strorage ). Had
 phát triển từ các công bố của Google về mô hình Map-Reduce và hệ thống file phân tán 
 GFS, cung cấp môi trường song song để thực thi tác vụ Map- Reduce.</p>
 
-<p>Hadoop nhờ có cơ chế streaming nên có thể phát triển trên các ứng dụng phân tán bằng cả java 
+<p>Hadoop được viết bằng Java nh nhờ có cơ chế streaming nên có thể phát triển trên các ứng dụng phân tán bằng cả java 
 hay các ngôn ngữ khác nhự C++, Python,…</p>
 
-<h3 id="2-tác-dụng-của-hadoop">2 Tác dụng của Hadoop</h3>
-
-<ul>
-  <li>Xử lý và làm việc với khối lượng dữ liệu khổng lồ tính bằng Petabyte</li>
-  <li>Xử lý trong môi trường dữ liệu phân tán, dữ liệu lưu trữ ở nhiều phần cuwngsg khác nhau,
-yêu cầu xử lý đồng b</li>
-  <li>Các lỗi xuất hiện thương xuyên</li>
-  <li>Băng Thông giữa các phần cứng vật lý chứa dữ liệu có giới hạn</li>
-</ul>
-
-<h3 id="kiến-trúc-của-hadoop">Kiến trúc của Hadoop</h3>
-
-<p>Hadoop có 2 thành phần chính:</p>
-<ul>
-  <li>Hadoop MapReduce là cách chia 1 vấn đề dữ liệu lớn hơn thành các đoạn nhỏ hơn và phân 
-tán nó trên nhiều máy chủ. Mỗi máy chủ có 1 tập tài nguyên rieng và máy chủ xử lý dữ liệu
-tren</li>
-</ul>
-
-<h3 id="hadoop">Hadoop</h3>
-
-<p>Hadoop là một open-source framework được sử dụng cho việc lưu trữ dữ liệu và chạy các ứng
-dụng được phân cụm trên phần cứng. Nó cung cấp lưu trữ dư liệu lớn cho bất kì loại dữ liệu
-nào, ức mạnh xử lý to lớn và khả năng xử lý các tác vụ hoặc công việc đồng thời hầu như không giới hạn.</p>
-
-<h1 id="tại-sao-hadoop-lại-quan-trọng">Tại sao Hadoop lại quan trọng</h1>
+<h2 id="2-tại-sao-hadoop-lại-quan-trọng">2. Tại sao Hadoop lại quan trọng</h2>
 
 <ul>
   <li>
     <p>Có khả năng lưu trữ và xử lý một lượng bất kì loại dữ liệu nào một cách nhanh chóng.
 Cùng với việc gia tăng khối lượng và sự đa dạng dữ liệu, đặc biệt là dữ liệu mạng xã hội,
-hay dữ liệu phục vụ cho DS, IOT,… Do đó nên hadoop càng ngày càng được ưa chuộng.</p>
+hay dữ liệu phục vụ cho DS, IOT,… Do đó nên hadoop càng ngày càng được ưa chuộng để làm 
+việc với khối lượng dữ liệu khổng lồ tình bằng Petabye.</p>
   </li>
   <li>
     <p>Khả năng tính toán, Mô tình xử lý phân tán của Hadoop cho phép xử lý dữ liệu nhanh chóng.
@@ -166,10 +141,80 @@ xử lý dữ liệu trước khi lưu trữ nó. Ban có thể lưu trữ nhi�
 cách thêm các nodes.</li>
 </ul>
 
-<h1 id="những-thách-thức-khi-sử-dụng-hadoop">Những thách thức khi sử dụng Hadoop</h1>
+<h2 id="3-các-thành-phần-của-hadoop-">3. Các thành phần của Hadoop ?</h2>
 
-<p>MapReduce không tốt kết nối không tốt với tất cả vấn đề:</p>
+<p><strong>Hadoop gồm 4 thành phần chính:</strong></p>
 
+<h3 id="31-hdfs">3.1 HDFS</h3>
+<p>Data được lưu trữ theo cách phân tán trong HDFS. Có 2 thành phần trong HDFS là name node 
+và data node. Name node chỉ có 1 trong khi đó có thể có nhiều data node. Hay được hiểu theo
+cách khác đây là mô hình master - slave.</p>
+
+<p align="center">
+  <img src="/images/hadoop/master-slave.jpg" />
+</p>
+
+<p>Các name và data tạo thành cụm HDFS. Name node chịu trách nhiệm quả lý hoạt động của 
+các data node. Name node lưu trữ metadata trong khi đó các data node đọc, ghi, xử lý và
+sao chép dữ liệu. Chúng gửi tín hiệu- được gọi là heartbeat đến name mode. Các tín hiệu trên 
+để hiện thị trạng thái của data node.</p>
+
+<p align="center">
+  <img src="/images/hadoop/master-slave_2.jpg" />
+</p>
+
+<p>Ví dụ nếu có 30TB dữ liệu được lưu vào name node. Name node sẽ phân phố dữ liệu này trên các data node
+và dữ liệu này được sao chép giữa các data node khác nhau. Bạn có thể thấy trong hình trên các dữ liệu
+màu xanh lam, xám và đỏ được sao chép giữa 3 data node (theo cấu hình mặc định là 3) . Vậy nên khi một node bị lỗi, ta có thể thay thế 
+bằng các node mới mà vẫn đảm bảo tính toàn vẹn của dữ liệu.</p>
+
+<h3 id="32-mapreduce">3.2 MapReduce</h3>
+<p>MapReduce là một quá trình xử lý, tính toán phân tán dữ liệu lớn dựa trên java. Thuật toán MapReduce chứa 2 nhiệm 
+vụ quan trọng đó là Map và Reduce.</p>
+
+<p align="center">
+  <img src="/images/hadoop/mapreduce.jpg" />
+</p>
+
+<ul>
+  <li>
+    <p>Map lấy một tập hợp dữ liệu rồi biến đổi thành tập dữ liệu khác, trong
+đó các phần tử riêng lẻ được chia nhỏ thành các cặp key-value.</p>
+  </li>
+  <li>
+    <p>Reduce sử dụng đầu ra của quá trình map và kết hợp bộ dữ liệu đó thành bộ dữ liệu nhỏ hơn.</p>
+  </li>
+</ul>
+
+<p>Việc xử lý dữ liệu song song trên nhiều node làm tăng tốc độ xử lý đáng kể thậm chí với petabyte dữ liệu. 
+Càng nhiều node thì dữ liệu xử lý càng nhanh.</p>
+
+<h3 id="33-yarn-framework">3.3 Yarn Framework</h3>
+<p>Quản lý lập lịch các job và tài nguyên của các node.</p>
+
+<h3 id="34-common-utilities">3.4 Common Utilities</h3>
+<p>Là các thư viện được viết bằng Java để hỗ trợ các module hadoop khác. Hadoop Common còn được gọi là 
+Hadoop Core.</p>
+
+<h2 id="4-nhược-điểm-của-hadoop-">4. Nhược điểm của Hadoop ?</h2>
+<h3 id="41-vấn-đề-với-dữ-liệu-nhỏ">4.1 Vấn đề với dữ liệu nhỏ.</h3>
+<p>Hadoop sẽ thực hiện tốt với dữ liệu lớn, nhưng với nhiều dữ liệu nhỏ thì name node sẽ bị quá tải và 
+chứa quá nhiều metadata.</p>
+
+<h3 id="42-dễ-bị-hack">4.2 Dễ bị hack</h3>
+<p>Hadoop được viết bằng Java, mà Java lại là một trong những ngôn ngữ phổ biến nhất thế giới, điều này 
+khiên nó trở nên không an toàn vì có thể bị khai thác bởi các tin tặc.</p>
+
+<h3 id="43-hiệu-suất-thấp-với-dữ-liệu-nhỏ">4.3 Hiệu suất thấp với dữ liệu nhỏ</h3>
+<p>Hadoop được sinh ra để sử dụng với dữ liệu lớn, còn khi với dữ liệu nhỏ, hadoop không đẹp lại hiệu 
+quả như mong muốn.</p>
+
+<h1 id="tư-liệu-tham-khảo">Tư liệu tham khảo:</h1>
+
+<ul>
+  <li><a href="https://www.simplilearn.com/tutorials/hadoop-tutorial/what-is-hadoop">https://www.simplilearn.com/tutorials/hadoop-tutorial/what-is-hadoop</a></li>
+  <li><a href="https://www.geeksforgeeks.org/hadoop-pros-and-cons">https://www.geeksforgeeks.org/hadoop-pros-and-cons</a></li>
+</ul>
 
   </div>
 
