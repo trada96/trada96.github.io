@@ -94,10 +94,13 @@ cũng được phổ biến hơn để lữu trữ và xử lý dữ liệu đó
 
 <p>Bài viết của mình sẽ gồm các phần như sau :</p>
 
-<p><strong>1. Hadoop là gì ?</strong>
-<strong>2. Tại sao Hadoop lại quan trọng ?</strong>
-<strong>3. Các thành phần của Hadoop ?</strong>
-<strong>4. Nhược điểm của Hadoop ?</strong></p>
+<p><strong>1. Hadoop là gì ?</strong></p>
+
+<p><strong>2. Tại sao Hadoop lại quan trọng ?</strong></p>
+
+<p><strong>3. Các thành phần của Hadoop ?</strong></p>
+
+<p><strong>4. Nhược điểm của Hadoop ?</strong></p>
 
 <h2 id="1-hadoop-là-gì-">1. Hadoop là gì ?</h2>
 
@@ -109,7 +112,7 @@ có tính toán và lưu trữ cục bộ (local computation and strorage ). Had
 phát triển từ các công bố của Google về mô hình Map-Reduce và hệ thống file phân tán 
 GFS, cung cấp môi trường song song để thực thi tác vụ Map- Reduce.</p>
 
-<p>Hadoop được viết bằng Java nh nhờ có cơ chế streaming nên có thể phát triển trên các ứng dụng phân tán bằng cả java 
+<p>Hadoop được viết bằng Java nhưng nhờ có cơ chế streaming nên có thể phát triển trên các ứng dụng phân tán bằng cả java 
 hay các ngôn ngữ khác nhự C++, Python,…</p>
 
 <h2 id="2-tại-sao-hadoop-lại-quan-trọng">2. Tại sao Hadoop lại quan trọng</h2>
@@ -168,6 +171,9 @@ và dữ liệu này được sao chép giữa các data node khác nhau. Bạn 
 màu xanh lam, xám và đỏ được sao chép giữa 3 data node (theo cấu hình mặc định là 3) . Vậy nên khi một node bị lỗi, ta có thể thay thế 
 bằng các node mới mà vẫn đảm bảo tính toàn vẹn của dữ liệu.</p>
 
+<p>Trong namenode sẽ lưu các metadata của dữ liệu ví dụ như tên file, đường dẫn, số lượng data block, block id, 
+số lượng bản sao, ..</p>
+
 <h3 id="32-mapreduce">3.2 MapReduce</h3>
 <p>MapReduce là một quá trình xử lý, tính toán phân tán dữ liệu lớn dựa trên java. Thuật toán MapReduce chứa 2 nhiệm 
 vụ quan trọng đó là Map và Reduce.</p>
@@ -190,7 +196,9 @@ vụ quan trọng đó là Map và Reduce.</p>
 Càng nhiều node thì dữ liệu xử lý càng nhanh.</p>
 
 <h3 id="33-yarn-framework">3.3 Yarn Framework</h3>
-<p>Quản lý lập lịch các job và tài nguyên của các node.</p>
+<p>Yarn là thành phần chính của Hadoop v2.0. Yarn giúp cho việc xử lý batch processing, stream processing,
+interactive processing và graph processing. Với Yarn thì lớp xử lý với lớp tài nguyên được tách ra riêng
+đây là điểm khác so với Job Tracker trong v1.0.</p>
 
 <h3 id="34-common-utilities">3.4 Common Utilities</h3>
 <p>Là các thư viện được viết bằng Java để hỗ trợ các module hadoop khác. Hadoop Common còn được gọi là 
@@ -203,7 +211,8 @@ chứa quá nhiều metadata.</p>
 
 <h3 id="42-dễ-bị-hack">4.2 Dễ bị hack</h3>
 <p>Hadoop được viết bằng Java, mà Java lại là một trong những ngôn ngữ phổ biến nhất thế giới, điều này 
-khiên nó trở nên không an toàn vì có thể bị khai thác bởi các tin tặc.</p>
+khiên nó trở nên không an toàn vì có thể bị khai thác bởi các tin tặc. Hadoop đã sử dụng Kerberos để
+bảo mật, tuy nhiên nó không dễ để quản lý.</p>
 
 <h3 id="43-hiệu-suất-thấp-với-dữ-liệu-nhỏ">4.3 Hiệu suất thấp với dữ liệu nhỏ</h3>
 <p>Hadoop được sinh ra để sử dụng với dữ liệu lớn, còn khi với dữ liệu nhỏ, hadoop không đẹp lại hiệu 
@@ -214,6 +223,8 @@ quả như mong muốn.</p>
 <ul>
   <li><a href="https://www.simplilearn.com/tutorials/hadoop-tutorial/what-is-hadoop">https://www.simplilearn.com/tutorials/hadoop-tutorial/what-is-hadoop</a></li>
   <li><a href="https://www.geeksforgeeks.org/hadoop-pros-and-cons">https://www.geeksforgeeks.org/hadoop-pros-and-cons</a></li>
+  <li><a href="https://www.upgrad.com/blog/what-is-hadoop-yarn-architecture-its-components/">https://www.upgrad.com/blog/what-is-hadoop-yarn-architecture-its-components/</a></li>
+  <li><a href="https://hadoop.apache.org/docs/current/hadoop-yarn/hadoop-yarn-site/YARN.html">https://hadoop.apache.org/docs/current/hadoop-yarn/hadoop-yarn-site/YARN.html</a></li>
 </ul>
 
   </div>
