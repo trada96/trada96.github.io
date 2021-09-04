@@ -36,10 +36,11 @@ Nội dung chi tiết:
 - SQL sử dụng với dữ liệu có cấu trúc được định nghĩa sẵn, còn nosql có thể sử dụng với dữ liệu phi cấu trúc.
 
 
-- Chi tiết:
+**Chi tiết:**
 
-| Parameters      | SQL     | NoSQL
-| -----------     | ----------- |--|
+
+| Parameters | SQL | NoSQL|
+| -----------|-----|------|
 | Definition      | SQL là cơ sở dữ liệu quan hệ       | NoSQL là cơ sở dữ liệu phi quan hệ|
 | Design for        | SQL truyền thống sử dụng truy vấn để phân tích dữ liệu. Thường được sử dụng cho các hệ thống OLAP        |NoSQL được phát triển để đáp ứng nhu cầu của dữ liệu lớn, đa dạng của các ứng dụng hiện đại |
 |Query Language|Ngôn ngữ truy vấn có cấu trúc| Không có ngôn ngữ truy vấn|
@@ -54,6 +55,7 @@ Nội dung chi tiết:
 |Important|Nên được sử dụng khi tính hợp lệ vô cùng quan trọng|Sử dụng khi dữ liệu nhanh quan trọng hơn dữ liệu chính xác|
 |Best Option|Khi bạn cần hỗ trợ các try vấn động, phức tạp|Sử dụng khi bạn cần mở rộng quy mô dựa trên yêu cầu thay đổi|
 |Best Features|Hỗ trợ đa nền tảng, bảo mật và miễn phí|Dễ dàng sử dụng, hiệu suât cao và công cụ linh hoạt|
+{: .table-striped .table}
 
 ## 3. Khi nào thì sử dụng SQL hay NoSQL ?
 
