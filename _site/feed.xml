@@ -1,4 +1,145 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.9.0">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2021-05-06T09:59:16+07:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">Tuan Anh</title><subtitle>AI Engineer/ Data Scientist</subtitle><entry><title type="html">Elasticsearch</title><link href="http://localhost:4000/elasticsearch/" rel="alternate" type="text/html" title="Elasticsearch" /><published>2021-03-03T00:00:00+07:00</published><updated>2021-03-03T00:00:00+07:00</updated><id>http://localhost:4000/elasticsearch</id><content type="html" xml:base="http://localhost:4000/elasticsearch/"></content><author><name></name></author><summary type="html"></summary></entry><entry><title type="html">Tìm hiểu cơ bản về Hadoop - Big Data</title><link href="http://localhost:4000/hadoop/" rel="alternate" type="text/html" title="Tìm hiểu cơ bản về Hadoop - Big Data" /><published>2021-03-03T00:00:00+07:00</published><updated>2021-03-03T00:00:00+07:00</updated><id>http://localhost:4000/hadoop</id><content type="html" xml:base="http://localhost:4000/hadoop/">&lt;p&gt;Khi bạn học về Big Data, không sớm hay muộn thì bạn sẽ gặp cụm từ Hadoop. Vậy chính xác nó là gì ?&lt;/p&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.9.0">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2021-09-05T01:07:52+07:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">Tuan Anh</title><subtitle>AI Engineer/ Data Scientist</subtitle><entry><title type="html">SQL vs NoSQL Khác biệt là gì và được sử dụng khi nào ?</title><link href="http://localhost:4000/sqlvsnosql/" rel="alternate" type="text/html" title="SQL vs NoSQL Khác biệt là gì và được sử dụng khi nào ?" /><published>2021-09-05T00:00:00+07:00</published><updated>2021-09-05T00:00:00+07:00</updated><id>http://localhost:4000/sqlvsnosql</id><content type="html" xml:base="http://localhost:4000/sqlvsnosql/">&lt;p&gt;Hôm nay chúng ta cùng nhau tìm hiểu về sql và nosql xem chúng là gì, và sự khác nhau giữa chúng là gì nhé.&lt;/p&gt;
+
+&lt;p&gt;Các phần chính trong bài viết&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;1. SQL và NoSQL là gì ?&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;2. Sự khác nhau giữa SQL và NoSQL là gì ?&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;3. Khi nào thì sử dụng SQL hay NoSQL ?&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;Nội dung chi tiết:&lt;/p&gt;
+
+&lt;h2 id=&quot;1-sql-và-nosql-là-gì-&quot;&gt;1. SQL và NoSQL là gì ?&lt;/h2&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;SQL (Structured Query Language) là ngôn ngữ truy vấn có cấu trúc, là dạng database có quan hệ và mối quan hệ được thể hiện qua dạng bảng. SQL được sử dụng hiệu quả để chèn chèn, tìm kiếm, cập nhật, xóa bản ghi trong database. Các database SQL thường sử dụng là MySQL, Oracle, Ms SQL Server, Sybase, etc…&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;NoSQL (Non SQL or Not Only SQL) được phát triển từ cuối những năm 2000 với trọng tâm là khả năng mở rộng quy mô (scale), truy vấn nhanh, cho phép thay đổi ứng dụng thường xuyên và giúp lập trình đơn giản hơn cho các nhà phát triển. NoSQL không yêu cầu một schema cố định và nó được sử dụng cho các kho dữ liệu phân tán với nhu cầu lưu trữ dữ liệu lớn, ứng dụng thời gian thực.&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;2-sự-khác-nhau-giữa-sql-và-nosql-là-gì-&quot;&gt;2. Sự khác nhau giữa SQL và NoSQL là gì ?&lt;/h2&gt;
+
+&lt;p&gt;&lt;strong&gt;Những điểm khác nhau chính&lt;/strong&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;SQL làn cơ sở dữ liệu quan hệ trong khi nosql là cơ sở dữ liệu phi quan hệ hoặc phân tán.&lt;/li&gt;
+  &lt;li&gt;SQL là cơ sở dữ liệu dạng bảng, còn nosql là cơ sở dữ liệu bao gồm dạng document, cặp key-value, graph.&lt;/li&gt;
+  &lt;li&gt;SQL có khả năng scale theo chiều dọc còn nosql mở rộng theo chiều ngang.&lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;SQL sử dụng với dữ liệu có cấu trúc được định nghĩa sẵn, còn nosql có thể sử dụng với dữ liệu phi cấu trúc.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;Chi tiết:&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;table&gt;
+  &lt;thead&gt;
+    &lt;tr&gt;
+      &lt;th&gt;Parameters&lt;/th&gt;
+      &lt;th&gt;SQL&lt;/th&gt;
+      &lt;th&gt;NoSQL&lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;td&gt;Definition&lt;/td&gt;
+      &lt;td&gt;SQL là cơ sở dữ liệu quan hệ&lt;/td&gt;
+      &lt;td&gt;NoSQL là cơ sở dữ liệu phi quan hệ&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;Design for&lt;/td&gt;
+      &lt;td&gt;SQL truyền thống sử dụng truy vấn để phân tích dữ liệu. Thường được sử dụng cho các hệ thống OLAP&lt;/td&gt;
+      &lt;td&gt;NoSQL được phát triển để đáp ứng nhu cầu của dữ liệu lớn, đa dạng của các ứng dụng hiện đại&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;Query Language&lt;/td&gt;
+      &lt;td&gt;Ngôn ngữ truy vấn có cấu trúc&lt;/td&gt;
+      &lt;td&gt;Không có ngôn ngữ truy vấn&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;Type&lt;/td&gt;
+      &lt;td&gt;SQL có kiểu dữ liệu dạng bảng&lt;/td&gt;
+      &lt;td&gt;NoSQL có kiểu dữ liệu đa dạng như document, cặp key-value, graph&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;Schema&lt;/td&gt;
+      &lt;td&gt;SQL cần phải có schema định nghĩa sẵn trước khi sử dụng&lt;/td&gt;
+      &lt;td&gt;NoSQL có schema động để sử dụng với dữ liệu phi cấu trúc&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;Khả năng mở rộng&lt;/td&gt;
+      &lt;td&gt;SQL databases có khả năng mở rộng theo chiều dọc&lt;/td&gt;
+      &lt;td&gt;NoSQL có khả năng mở rộng theo chiều ngang&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;Exampes&lt;/td&gt;
+      &lt;td&gt;Oracle, Postgres, MS SQL&lt;/td&gt;
+      &lt;td&gt;MongoDB, Redis, Neo4j, Cassandra, Hbase&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;Phù hợp nhất&lt;/td&gt;
+      &lt;td&gt;Phù hợp với các nghiệp vụ chuyên sâu, phức tạp, mối quan hệ giữa các records, tables&lt;/td&gt;
+      &lt;td&gt;Không phù hợp với truy vấn phức tạp&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;Lưu trữ dữ liệu phân cấp&lt;/td&gt;
+      &lt;td&gt;SQL không phù hợp với dữ liệu phân cấp&lt;/td&gt;
+      &lt;td&gt;Phù hợp hơn với dữ liệu phân cấp vì nó hỗ trợ định dạng key-value (json)&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;&lt;a href=&quot;http://tiepvut.blogspot.com/2016/07/nhat-quan-du-lieu-trong-nosql.html&quot;&gt;Tính nhất quán&lt;/a&gt;&lt;/td&gt;
+      &lt;td&gt;Nó phải được cấu hình để có tính nhất quán mạnh mẽ&lt;/td&gt;
+      &lt;td&gt;Nó tùy thuộc vào loại DBMS vì một số cung cấp tính nhất quán như mongoDB, trong khi có cái khác lại chỉ cung cấp tính nhất quán cuối cùng như cassandra&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;Best Used for&lt;/td&gt;
+      &lt;td&gt;SQL là lựa chọn đúng đắn để giải quyết các vấn đề &lt;a href=&quot;https://vi.wikipedia.org/wiki/ACID&quot;&gt;ACID&lt;/a&gt;&lt;/td&gt;
+      &lt;td&gt;NoSQL được sử dụng tốt nhất để giải quyết vấn đề dữ liệu lớn&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;Important&lt;/td&gt;
+      &lt;td&gt;Nên được sử dụng khi tính hợp lệ vô cùng quan trọng&lt;/td&gt;
+      &lt;td&gt;Sử dụng khi dữ liệu nhanh quan trọng hơn dữ liệu chính xác&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;Best Option&lt;/td&gt;
+      &lt;td&gt;Khi bạn cần hỗ trợ các try vấn động, phức tạp&lt;/td&gt;
+      &lt;td&gt;Sử dụng khi bạn cần mở rộng quy mô dựa trên yêu cầu thay đổi&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;Best Features&lt;/td&gt;
+      &lt;td&gt;Hỗ trợ đa nền tảng, bảo mật và miễn phí&lt;/td&gt;
+      &lt;td&gt;Dễ dàng sử dụng, hiệu suât cao và công cụ linh hoạt&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;h2 id=&quot;3-khi-nào-thì-sử-dụng-sql-hay-nosql-&quot;&gt;3. Khi nào thì sử dụng SQL hay NoSQL ?&lt;/h2&gt;
+
+&lt;h3 id=&quot;31-khi-nào-sử-dụng-sql&quot;&gt;3.1 Khi nào sử dụng SQL?&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Được ưu tiên khi muốn thực hiện join các bảng hay các câu truy vấn phức tạp&lt;/li&gt;
+  &lt;li&gt;Thương được sử dụng với các giao dịch tài chính&lt;/li&gt;
+  &lt;li&gt;Kiểu dữ liệu đã có cấu trúc định dạng sẵn&lt;/li&gt;
+  &lt;li&gt;Sử dụng phù hợp với OLAP&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;32-khi-nào-sử-dụng-nosql-&quot;&gt;3.2 Khi nào sử dụng NoSQL ?&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Sử dụng với dữ liệu lớn vì khả năng scale dễ dàng.&lt;/li&gt;
+  &lt;li&gt;Sử dụng với các dữ liệu phân cấp hoặc dữ liệu phi cấu trúc&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h1 id=&quot;tư-liệu-tham-khảo&quot;&gt;Tư liệu tham khảo:&lt;/h1&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;https://www.guru99.com/sql-vs-nosql.html&quot;&gt;https://www.guru99.com/sql-vs-nosql.html&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;</content><author><name></name></author><summary type="html">Hôm nay chúng ta cùng nhau tìm hiểu về sql và nosql xem chúng là gì, và sự khác nhau giữa chúng là gì nhé.</summary></entry><entry><title type="html">Elasticsearch</title><link href="http://localhost:4000/elasticsearch/" rel="alternate" type="text/html" title="Elasticsearch" /><published>2021-03-03T00:00:00+07:00</published><updated>2021-03-03T00:00:00+07:00</updated><id>http://localhost:4000/elasticsearch</id><content type="html" xml:base="http://localhost:4000/elasticsearch/"></content><author><name></name></author><summary type="html"></summary></entry><entry><title type="html">Tìm hiểu cơ bản về Hadoop - Big Data</title><link href="http://localhost:4000/hadoop/" rel="alternate" type="text/html" title="Tìm hiểu cơ bản về Hadoop - Big Data" /><published>2021-03-03T00:00:00+07:00</published><updated>2021-03-03T00:00:00+07:00</updated><id>http://localhost:4000/hadoop</id><content type="html" xml:base="http://localhost:4000/hadoop/">&lt;p&gt;Khi bạn học về Big Data, không sớm hay muộn thì bạn sẽ gặp cụm từ Hadoop. Vậy chính xác nó là gì ?&lt;/p&gt;
 
 &lt;p align=&quot;center&quot;&gt;
   &lt;img src=&quot;/images/hadoop/hadoop.jpg&quot; /&gt;
@@ -712,151 +853,4 @@ img/97822.jpg   V/v: Duyệt dự toán chi phí Ban QLDA nhiệt điện 1 năm
 
 &lt;p&gt;Mình nghĩ rằng bài toán nhận dạng OCR là một bài toán nhận dạng, tức là việc sử dụng language model (dùng để phát sinh câu) xịn xò có thể quá dư thừa, thay vào đó nên tập trung vào việc nhận dạng từng kí tự ??? Tuy nhiên việc nhận dạng từng kí tự đòi hỏi chi phí đánh nhãn quá lớn vì các bạn cần phải vẽ boundary box cho từng kí tự và các boundary box giữa 2 kí tự liên tiếp có thể bị đè lên nhau hoặc phân biệt không rõ ràng. Do đó, tùy vào trường hợp cụ thể mà các bạn có thể sử dụng phương pháp hơp lý. Ví dụ với chứng minh thư, các kí tự thường to rõ và ít nội dung các bạn có thể xem xét đánh boundary box cho từng kí tự, tuy nhiên với các loại văn bản có nhiều nội dung cần OCR các bạn có thể chọn nhận dạng theo từng dòng.&lt;/p&gt;
 
-&lt;p&gt;Mình hy vọng các chia sẻ trên và thư viện VietOCR sẽ giúp các bạn giải quyết nhanh các bài toán số hóa. Nếu các bạn có thắc mắc gì vui lòng comment phía dưới hoặc liên hệ mình tại pbcquoc@gmail.com&lt;/p&gt;</content><author><name></name></author><summary type="html">Giới Thiệu Trong blog này, mình chia sẻ một số thực nghiệm của 2 mô hình OCR cho bài toán nhận dạng chữ tiếng việt: AttentionOCR và TransformerOCR. AttentionOCR sử dụng kiến trúc attention seq2seq đã được sử dụng khá nhiều trong các bài toán NLP và cả OCR, còn TransformerOCR sử dụng kiến trúc của Transformer đã đạt được nhiều tiến bộ vượt bậc cho cộng đồng NLP. Một câu hỏi mà mình cũng khá quan tâm là Liệu TransformerOCR có mang lại kết quả vượt bậc như những gì các bạn đã nhìn thấy trong các bài toán NLP hay không ? Đồng thời, mình cũng cung cấp một thư viện mới cho bài toán OCR, thư viện hướng tới kết quả chính xác, nhanh chóng, dễ huấn luyện, dễ dự đoán cho cả các bạn chưa có nhiều kinh nghiệm cũng có thể sử dụng được trong các bài toán liên quan đến số hóa.</summary></entry><entry><title type="html">Tìm Hiểu Convolutional Neural Networks Cho Phân Loại Ảnh</title><link href="http://localhost:4000/cnn/" rel="alternate" type="text/html" title="Tìm Hiểu Convolutional Neural Networks Cho Phân Loại Ảnh" /><published>2019-04-03T00:00:00+07:00</published><updated>2019-04-03T00:00:00+07:00</updated><id>http://localhost:4000/cnn</id><content type="html" xml:base="http://localhost:4000/cnn/">&lt;h2 id=&quot;giới-thiệu&quot;&gt;Giới Thiệu&lt;/h2&gt;
-&lt;p&gt;Convolutional Neural Networks (CNN) là một trong những mô hình deep learning phổ biến nhất và có ảnh hưởng nhiều nhất trong cộng đồng Computer Vision. CNN được dùng trong trong nhiều bài toán như nhân dạng ảnh, phân tích video, ảnh MRI, hoặc cho bài các bài của lĩnh vự xử lý ngôn ngữ tự nhiên,và hầu hết đều giải quyết tốt các bài toán này. &lt;br /&gt;&lt;br /&gt; CNN cũng có lịch sử khá lâu đời. Kiến trúc gốc của mô hình CNN được giới thiệu bởi một nhà khoa học máy tính người Nhật vào năm 1980. Sau đó, năm 1998, Yan LeCun lần đầu huấn luyện mô hình CNN với thuật toán backpropagation cho bài toán nhận dạng chữ viết tay. Tuy nhiên, mãi đến năm 2012, khi một nhà khoa học máy tính người Ukraine Alex Krizhevsky (đệ của Geoffrey Hinton) xây dựng mô hình CNN (AlexNet) và sử dụng GPU để tăng tốc quá trình huấn luyện deep nets để đạt được top 1 trong cuộc thi Computer Vision thường niên ImageNet với độ lỗi phân lớp top 5 giảm hơn 10% so với những mô hình truyền thống trước đó, đã tạo nên làn sóng mãnh mẽ sử dụng deep CNN với sự hỗ trợ của GPU để giải quyết càng nhiều các vấn đề trong Computer Vision.&lt;/p&gt;
-
-&lt;h2 id=&quot;image-classification&quot;&gt;Image Classification&lt;/h2&gt;
-&lt;p&gt;Trong bài blog này, mình giới thiệu kiến trúc cụ thể của mô hình CNN cho bài toán phân loại ảnh. Phân loại ảnh là một bài toán quan trọng bậc nhất trong lĩnh vực Computer Vision. Chúng ta đã có rất nhiều nghiên cứu để giải quyết bài toán này bằng cách rút trích các đặc trưng rất phổ biến như SIFT, HOG rồi cho máy tính học nhưng những cách này tỏ ra không thực sự hiểu quả. Nhưng ngược lại, đối với con người, chúng ta lại có bản năng tuyệt vời để phân loại được những đối tượng trong khung cảnh xung quanh một cách dễ làm.&lt;/p&gt;
-
-&lt;p&gt;Dữ liệu đầu vào của bài toán là một bức ảnh. Một ảnh được biểu ảnh bằng ma trận các giá trị. Mô hình phân lớp sẽ phải dự đoán được lớp của ảnh từ ma trận điểm ảnh này, ví dụ như ảnh đó là con mèo, chó, hay là chim.&lt;/p&gt;
-
-&lt;div class=&quot;img-div&quot;&gt;
-    &lt;img src=&quot;/images/cnn_input.png&quot; /&gt;
-&lt;/div&gt;
-
-&lt;p&gt;Để biểu diễn một bức ảnh 256x256 pixel trong máy tính thì ta cần ma trận sẽ có kính thước 256x256 chiều, và tùy thuộc vào bức ảnh là có màu hay ảnh xám thì ma trận này sẽ có số kênh tương ứng, ví dụ với ảnh màu 256x256 RGB, chúng ta sẽ có ma trận 256x256x3 để biểu diễn ảnh này.&lt;/p&gt;
-
-&lt;h2 id=&quot;mối-liên-kết-giữ-cnn-và-thị-giác&quot;&gt;Mối liên kết giữ CNN và thị giác&lt;/h2&gt;
-&lt;p&gt;CNN có mối liên kết chặt chẽ với sinh học, cụ thể là của võ não thị giác, nơi xử lý thông tin liên quan đến hình ảnh từ các tế bào cảm thụ ánh sánh nằm ở mắt người. Năm 1962, 2 nhà thần kinh học người Mỹ là Hubel and Wiesel đã thực hiện thí nghiệm khám phá cách tổ chức của các tế bào não để xử lý thông tin thị giác và các tổ chức này đảm nhận nhiệm vụ nào. Trong &lt;a href=&quot;https://www.youtube.com/watch?v=Cw5PKV9Rj3o&quot;&gt;video&lt;/a&gt; này, các bạn có thể nghe được âm thanh đại diện cho các tế nào não phản ứng lại với các hình ảnh, góc cạnh, hướng của các đường thẳng xuất hiện trong video theo một trật tự nhất định. Điều này có nghĩ là mỗi neuron được thiết lập để phản ứng lại một số đặc điểm cố định của neuron đó.&lt;/p&gt;
-&lt;div class=&quot;img-div&quot;&gt;
-    &lt;img src=&quot;/images/cnn_visual_cortex.jpg&quot; /&gt;
-&lt;/div&gt;
-
-&lt;h2 id=&quot;cấu-trúc-cnn&quot;&gt;Cấu trúc CNN&lt;/h2&gt;
-&lt;p&gt;CNN bao gồm tập hợp các lớp cơ bản bao gồm: convolution layer + nonlinear layer, pooling layer, fully connected layer. Các lớp này liên kết với nhau theo một thứ tự nhất định. Thông thường, một ảnh sẽ được lan truyền qua tầng convolution layer + nonlinear layer đầu tiên, sau đó các giá trị tính toán được sẽ lan truyền qua pooling layer, bộ ba convolution layer + nonlinear layer + pooling layer có thể được lặp lại nhiều lần trong network. Và sau đó được lan truyền qua tầng fully connected layer và softmax để tính sác xuất ảnh đó chứa vật thế gì.&lt;/p&gt;
-
-&lt;div class=&quot;img-div&quot;&gt;
-    &lt;img src=&quot;/images/cnn_model.png&quot; /&gt;
-&lt;/div&gt;
-
-&lt;h3 id=&quot;convolution-layer&quot;&gt;Convolution Layer&lt;/h3&gt;
-&lt;p&gt;Convolution layer là lớp quan trọng nhất và cũng là lớp đầu tiên của của mô hình CNN. Lớp này có chức năng chính là phát hiện các đặc trưng có tính không gian hiệu quả. Trong tầng này có 4 đối tượng chính là: ma trận đầu vào, bộ &lt;strong&gt;filters&lt;/strong&gt;, và &lt;strong&gt;receptive field&lt;/strong&gt;, &lt;strong&gt;feature map&lt;/strong&gt;. Conv layer nhận đầu vào là một ma trận 3 chiều và một bộ filters cần phải học. Bộ filters này sẽ trượt qua từng vị trí trên bức ảnh để tính tích chập (convolution) giữa bộ filter và phần tương ứng trên bức ảnh. Phần tưng ứng này trên bức ảnh gọi là receptive field, tức là vùng mà một neuron có thể nhìn thấy để đưa ra quyết định, và mà trận cho ra bới quá trình này được gọi là feature map. Để hình dung, các bạn có thể tưởng tượng, bộ filters giống như các tháp canh trong nhà tù quét lần lượt qua không gian xung quanh để tìm kiếm tên tù nhân bỏ trốn. Khi phát hiện tên tù nhân bỏ trốn, thì chuông báo động sẽ reo lên, giống như các bộ filters tìm kiếm được đặc trưng nhất định thì tích chập đó sẽ cho giá trị lớn.&lt;/p&gt;
-
-&lt;div class=&quot;img-div&quot;&gt;
-    &lt;img src=&quot;https://media.giphy.com/media/3orif7it9f4phjv4LS/giphy.gif&quot; /&gt;
-&lt;/div&gt;
-
-&lt;p&gt;Với ví dụ ở bên dưới, dữ liệu đầu vào ở là ma trận có kích thước 8x8x1, một bộ filter có kích thước 2x2x1, feature map có kích thước 7x7x1. Mỗi giá trị ở feature map được tính bằng tổng của tích các phần tử tương ứng của bộ filter 2x2x1 với receptive field trên ảnh. Và để tính tất cả các giá trị cho feature map, các bạn cần trượt filter từ trái sáng phải, từ trên xuống dưới. Do đó, các bạn có thể thấy rằng phép convolution bảo toàn thứ tự không gian của các điểm ảnh. ví dụ điểm góc gái của dữ liệu đầu vào sẽ tương ứng với bên một điểm bên góc trái của feature map.&lt;/p&gt;
-
-&lt;div class=&quot;img-div&quot;&gt;
-    &lt;img src=&quot;/images/cnn_covolution_layer.png&quot; /&gt;
-&lt;/div&gt;
-
-&lt;h4 id=&quot;tầng-convolution-như-là-feature-detector&quot;&gt;Tầng convolution như là feature detector&lt;/h4&gt;
-
-&lt;p&gt;Tầng convolution có chức năng chính là phát hiện đặc trưng cụ thể của bức ảnh. Những đặc trưng này bao gồm đặc trưng cơ bản là góc,cạnh, màu sắc, hoặc đặc trưng phức tạp hơn như texture của ảnh. Vì bộ filter quét qua toàn bộ bức ảnh, nên những đặc trưng này có thể nằm ở vị trí bất kì trong bức ảnh, cho dù ảnh bị xoáy trái/phải thì những đặc trưng này vẫn bị phát hiện.&lt;/p&gt;
-
-&lt;p&gt;Ở minh họa dưới, các bạn có một filter 5x5 dùng để phát hiện góc/cạnh với, filter này chỉ có giá trị một tại các điểm tương ứng một góc cong.&lt;/p&gt;
-
-&lt;div class=&quot;img-div&quot;&gt;
-    &lt;img src=&quot;/images/cnn_high_level_feature.png&quot; /&gt;
-&lt;/div&gt;
-
-&lt;p&gt;Dùng filter ở trên trược qua ảnh của nhân vật Olaf trong trong bộ phim Frozen. Chúng ta thấy rằng, chỉ ở những vị trí trên bức ảnh có dạng góc như đặc trưng ở filter thì mới có giá trị lớn trên feature map, những vị trí còn lại sẽ cho giá trị thấp hơn. Điều này có nghĩa là, filter đã phát hiện thành công một dạng góc/cạnh trên dự liệu đầu vào. Tập hơn nhiều bộ filters sẽ cho phép các bạn phát hiện được nhiều loại đặc trưng khác nhau,và giúp định danh được đối tượng.&lt;/p&gt;
-
-&lt;div class=&quot;img-div&quot;&gt;
-    &lt;img src=&quot;/images/cnn_high_level_feature_ex.png&quot; /&gt;
-&lt;/div&gt;
-
-&lt;h4 id=&quot;các-tham-số-của-tầng-convolution-kích-thước-bộ-filter-stride-và-padding&quot;&gt;Các tham số của tầng convolution: Kích thước bộ filter, stride và padding&lt;/h4&gt;
-
-&lt;p&gt;Kích thước bộ filter là một trong những tham số quan trọng nhất của tầng convolution. Kích thước này tỉ lệ thuận với số tham số cần học tại mỗi tầng convolution và là tham số quyết định receptive field của tầng này. Kích thước phổ biến nhất của bộ filter là 3x3.&lt;/p&gt;
-
-&lt;p&gt;Kích thước filter nhỏ được ưu tiên lựa chọn thay kích thước lớn vì những lý do sau đây.&lt;/p&gt;
-
-&lt;table class=&quot;table-striped table&quot;&gt;
-  &lt;thead&gt;
-    &lt;tr&gt;
-      &lt;th&gt;&lt;strong&gt;Filter Nhỏ&lt;/strong&gt;&lt;/th&gt;
-      &lt;th&gt;&lt;strong&gt;Filter Lớn&lt;/strong&gt;&lt;/th&gt;
-    &lt;/tr&gt;
-  &lt;/thead&gt;
-  &lt;tbody&gt;
-    &lt;tr&gt;
-      &lt;td&gt;Kích thước nhỏ thì mỗi lần nhìn được một vùng nhỏ các pixel&lt;/td&gt;
-      &lt;td&gt;Receptive field lớn&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td&gt;Rút trích được đặc trưng có tính cục bộ cao&lt;/td&gt;
-      &lt;td&gt;Các đặc trưng có tính tổng quát hơn&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td&gt;Phát hiện được các đặc trưng nhỏ hơn&lt;/td&gt;
-      &lt;td&gt;Bắt được những phần cơ bản của bức ảnh&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td&gt;Đặc trưng rút trích được sẽ đa dạng, hữu ích hơn ở tầng sau&lt;/td&gt;
-      &lt;td&gt;Thông ít rút trích được ít đa dạng&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td&gt;Giảm kích thước ảnh chậm hơn, do đó cho phép mạng sâu hơn&lt;/td&gt;
-      &lt;td&gt;Giảm kích thước ảnh nhanh, do đó chỉ cho phép mạng nông&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td&gt;Ít trọng số hơn, chia sẻ trọng số tốt hơn&lt;/td&gt;
-      &lt;td&gt;Chia sẽ trọng số ít ý nghĩa hơn&lt;/td&gt;
-    &lt;/tr&gt;
-  &lt;/tbody&gt;
-&lt;/table&gt;
-
-&lt;p&gt;Kích thước filter của tầng convolution hầu hết đều là số lẻ, ví dụ như 3x3 hay 5x5. Với kích thước filter lẻ, các giá trị của feature map sẽ xác định một tâm điểm ở tầng phía trước. Nếu các bạn chọn filter có kích thước 2x2, 4x4 thì chúng ta sẽ gặp khó khăn khi muốn tìm vị trí tương ứng của các giá trị feature map trên không gian ảnh.&lt;/p&gt;
-
-&lt;div class=&quot;img-div&quot;&gt;
-    &lt;img src=&quot;/images/cnn_filter_size.png&quot; /&gt;
-&lt;/div&gt;
-
-&lt;p&gt;Ở những trường hợp đặt biệt như filter có kích thước 1x1, hay có kích thước bằng với ma trận đầu vào, tầng convolution có ý nghĩa rất thú vị. Khi có kích thước 1x1, tầng convolution xem mỗi điểm như một đặc trưng riêng biệt, có chức năng giảm chiều (tăng chiều) khi số lượt feature map ở tầng sau nhỏ hơn (lớn hơn) tầng trước. Filter 1x1 đã được sử dụng trong kiến trúc mạng phổ biến như Inception networks. Trong khi đó, filter với kích thước bằng ảnh đầu vào, tầng convolution có chức năng y hệt fully connected layer.&lt;/p&gt;
-
-&lt;p&gt;Ngoài ra, các bạn cần lưu ý tham số stride, thể hiện số pixel bạn cần phải dịch chuyển mỗi khi trượt bộ filter qua bức ảnh. Ở ví dụ bên dưới, với tham số stride bằng 2, bộ filter sẽ dịch chuyển 2 pixel mỗi lần áp dụng phép convolution.&lt;/p&gt;
-
-&lt;div class=&quot;img-div&quot;&gt;
-    &lt;img src=&quot;/images/cnn_strides.gif&quot; /&gt;
-&lt;/div&gt;
-
-&lt;p&gt;Khi các bạn áp dụng phép convolution thì ma trận đầu vào sẽ có nhỏ dần đi, do đó số layer của mô hình CNN sẽ bị giới hạn, và không thể xậy đựng deep nets mong muốn. Để giải quyết tình trạng này, các bạn cần padding vào ma trận đầu vào để đảm bảo kích thước đầu ra sau mỗi tầng convolution là không đổi. Do đó có thể xậy dựng được mô hình với số tầng convolution lớn tùy ý. Một cách đơn giản và phổ biến nhất để padding là sử dụng hàng số 0, ngoài ra các bạn cũng có thể sử dụng reflection padding hay là symmetric padding.&lt;/p&gt;
-
-&lt;div class=&quot;img-div&quot;&gt;
-    &lt;img src=&quot;/images/cnn_padding.png&quot; /&gt;
-&lt;/div&gt;
-
-&lt;h3 id=&quot;nonlinear-layer&quot;&gt;Nonlinear Layer&lt;/h3&gt;
-
-&lt;p&gt;ReLU (Rectified Linear Units, f = max(0, x)) là hàm kích hoạt phổ biến nhất cho CNN tại thời điểm của bài viết, được giới thiệu bởi Geoffrey E. Hinton năm 2010. Trước khi hàm ReLU được áp dụng thì những hàm như sigmoid hay tanh mới là những hàm được sử dụng phổ biến. Hàm ReLU được ưa chuộng vì tính toán đơn giản, giúp hạn chế tình trạng vanishing gradient, và cũng cho kết quả tốt hơn. ReLU cũng như những hàm kích hoạt khác, được đặt ngay sau tầng convolution, ReLU sẽ gán những giá trị âm bằng 0 và giữ nguyên giá trị của đầu vào khi lớn hơn 0.&lt;/p&gt;
-
-&lt;p&gt;ReLU cũng có một số vấn đề tiềm ẩn như không có đạo hàm tại điểm 0, giá trị của hàm ReLU có thể lớn đến vô cùng và nếu chúng ta không khởi tạo trọng số cẩn thận, hoặc khởi tạo learning rate quá lớn thì những neuron ở tầng này sẽ rơi vào trạng thái chết, tức là luôn có giá trị &amp;lt; 0.&lt;/p&gt;
-
-&lt;div class=&quot;img-div&quot;&gt;
-    &lt;img src=&quot;/images/cnn_relu.png&quot; /&gt;
-&lt;/div&gt;
-
-&lt;h3 id=&quot;pooling-layer&quot;&gt;Pooling Layer&lt;/h3&gt;
-
-&lt;p&gt;Sau hàm kích hoạt, thông thường chúng ta sử dụng tầng pooling. Một số loại pooling layer phổ biến như là max-pooling, average pooling, với chức năng chính là giảm chiều của tầng trước đó. Với một pooling có kích thước 2x2, các bạn cần phải trược filter 2x2 này trên những vùng ảnh có kích thước tương tự rồi sau đó tính max, hay average cho vùng ảnh đó.&lt;/p&gt;
-
-&lt;div class=&quot;img-div&quot;&gt;
-    &lt;img src=&quot;/images/cnn_pooling_layer.png&quot; /&gt;
-&lt;/div&gt;
-
-&lt;p&gt;Ý tương đằng sau tầng pooling là vị trí tuyết đối của những đặc trưng trong không gian ảnh không còn cần cần thiết, thay vào đó vị trí tương đối giữ các đặc trưng đã đủ để phân loại đối tượng. Hơn giảm tầng pooling có khả năng giảm chiều cực kì nhiều, làm hạn chế overfit, và giảm thời gian huấn luyện tốt.&lt;/p&gt;
-
-&lt;h3 id=&quot;fully-connected-layer&quot;&gt;Fully Connected Layer&lt;/h3&gt;
-
-&lt;p&gt;Tầng cuối cùng của mô hình CNN trong bài toán phân loại ảnh là tầng fully connected layer. Tầng này có chức năng chuyển ma trận đặc trưng ở tầng trước thành vector chứa xác suất của các đối tượng cần được dự đoán. Ví dụ, trong bài toán phân loại số viết tay MNIST có 10 lớp tương ứng 10 số từ 0-1, tầng fully connected layer sẽ chuyển ma trận đặc trưng của tầng trước thành vector có 10 chiều thể hiện xác suất của 10 lớp tương ứng.&lt;/p&gt;
-
-&lt;p&gt;Và cuối cùng, quá trình huấn luyện mô hình CNN cho bài toán phân loại ảnh cũng tương tự như huấn luyện các mô hình khác. Chúng ta cần có hàm độ lỗi để tính sai số giữ dự đoán của mô hình và nhãn chính xác, cũng như sử dụng thuật toán backpropagation cho quá trình cập nhật trọng số.&lt;/p&gt;
-
-&lt;h3 id=&quot;source-code&quot;&gt;Source code&lt;/h3&gt;
-
-&lt;p&gt;Mình cung cấp file notebook cho các bạn mới bắt đầu tìm hiểu và tập huấn luyện mô hình CNN cho bài toán phân loại ảnh. File này chứa hướng dẫn về mô hình CNN cũng như cách sử dụng tensorflow eager execution để xây dựng model cho dữ liệu &lt;a href=&quot;https://challenge.zalo.ai/&quot;&gt;ZaloAI Landmark &lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;Các bạn hãy tải về tại &lt;a href=&quot;https://github.com/pbcquoc/cnn&quot;&gt;đây&lt;/a&gt; nhé.&lt;/p&gt;</content><author><name></name></author><summary type="html">Giới Thiệu Convolutional Neural Networks (CNN) là một trong những mô hình deep learning phổ biến nhất và có ảnh hưởng nhiều nhất trong cộng đồng Computer Vision. CNN được dùng trong trong nhiều bài toán như nhân dạng ảnh, phân tích video, ảnh MRI, hoặc cho bài các bài của lĩnh vự xử lý ngôn ngữ tự nhiên,và hầu hết đều giải quyết tốt các bài toán này. CNN cũng có lịch sử khá lâu đời. Kiến trúc gốc của mô hình CNN được giới thiệu bởi một nhà khoa học máy tính người Nhật vào năm 1980. Sau đó, năm 1998, Yan LeCun lần đầu huấn luyện mô hình CNN với thuật toán backpropagation cho bài toán nhận dạng chữ viết tay. Tuy nhiên, mãi đến năm 2012, khi một nhà khoa học máy tính người Ukraine Alex Krizhevsky (đệ của Geoffrey Hinton) xây dựng mô hình CNN (AlexNet) và sử dụng GPU để tăng tốc quá trình huấn luyện deep nets để đạt được top 1 trong cuộc thi Computer Vision thường niên ImageNet với độ lỗi phân lớp top 5 giảm hơn 10% so với những mô hình truyền thống trước đó, đã tạo nên làn sóng mãnh mẽ sử dụng deep CNN với sự hỗ trợ của GPU để giải quyết càng nhiều các vấn đề trong Computer Vision.</summary></entry></feed>
+&lt;p&gt;Mình hy vọng các chia sẻ trên và thư viện VietOCR sẽ giúp các bạn giải quyết nhanh các bài toán số hóa. Nếu các bạn có thắc mắc gì vui lòng comment phía dưới hoặc liên hệ mình tại pbcquoc@gmail.com&lt;/p&gt;</content><author><name></name></author><summary type="html">Giới Thiệu Trong blog này, mình chia sẻ một số thực nghiệm của 2 mô hình OCR cho bài toán nhận dạng chữ tiếng việt: AttentionOCR và TransformerOCR. AttentionOCR sử dụng kiến trúc attention seq2seq đã được sử dụng khá nhiều trong các bài toán NLP và cả OCR, còn TransformerOCR sử dụng kiến trúc của Transformer đã đạt được nhiều tiến bộ vượt bậc cho cộng đồng NLP. Một câu hỏi mà mình cũng khá quan tâm là Liệu TransformerOCR có mang lại kết quả vượt bậc như những gì các bạn đã nhìn thấy trong các bài toán NLP hay không ? Đồng thời, mình cũng cung cấp một thư viện mới cho bài toán OCR, thư viện hướng tới kết quả chính xác, nhanh chóng, dễ huấn luyện, dễ dự đoán cho cả các bạn chưa có nhiều kinh nghiệm cũng có thể sử dụng được trong các bài toán liên quan đến số hóa.</summary></entry></feed>

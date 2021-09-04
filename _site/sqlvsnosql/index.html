@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>SQL vs NoSQL Khác biệt là gì và được sử dụng khi nào ? – Tuan Anh – AI Engineer/ Data Scientist</title>
+
+        <meta charset="utf-8" />
+    <meta content='text/html; charset=utf-8' http-equiv='Content-Type'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1.0'>
+
+    
+    <meta name="description" content="Hôm nay chúng ta cùng nhau tìm hiểu về sql và nosql xem chúng là gì, và sự khác nhau giữa chúng là gì nhé.
+
+" />
+    <meta property="og:description" content="Hôm nay chúng ta cùng nhau tìm hiểu về sql và nosql xem chúng là gì, và sự khác nhau giữa chúng là gì nhé.
+
+" />
+    
+    <meta name="author" content="Tuan Anh" />
+
+    
+    <meta property="og:title" content="SQL vs NoSQL Khác biệt là gì và được sử dụng khi nào ?" />
+    <meta property="twitter:title" content="SQL vs NoSQL Khác biệt là gì và được sử dụng khi nào ?" />
+    
+
+    <!--[if lt IE 9]>
+      <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+
+    <link rel="stylesheet" type="text/css" href="/style.css" />
+    <link rel="alternate" type="application/rss+xml" title="Tuan Anh - AI Engineer/ Data Scientist" href="/feed.xml" />
+
+    <!-- Created with Jekyll Now - http://github.com/barryclark/jekyll-now -->
+  </head>
+
+  <body>
+    <div class="wrapper-masthead">
+      <div class="container">
+        <header class="masthead clearfix">
+          <a href="/" class="site-avatar"><img src="/images/luffy.jpeg" /></a>
+
+          <div class="site-info">
+            <h1 class="site-name"><a href="/">Tuan Anh</a></h1>
+            <p class="site-description">AI Engineer/ Data Scientist</p>
+          </div>
+
+
+
+
+
+
+
+          <nav>
+
+
+            <a href="/"><b>Blog</b></a>
+<!--            <a href="/datascientist"><b>Data Scientist</b></a>-->
+<!--            <a href="/deeplearning"><b>Deep Learning</b></a>-->
+            <a href="/tailieu"><b>Tài Liệu</b></a>
+            <a href="/about"><b>About</b></a>
+            <a href="/resume"><b>Resume</b></a>
+          </nav>
+
+
+        </header>
+        <div>
+          <nav>
+              <a href="/deeplearning"><b style="color:blue;">Deep Learning</b></a>
+              <a href="/computervision"><b style="color:blue;">Computer Vision</b></a>
+              <a href="/bigdata"><b style="color:blue;">Big Data</b></a>
+          </nav>
+        </div>
+        <br>
+        <br>
+        <br>
+
+      </div>
+
+    </div>
+
+    <div id="main" role="main" class="container">
+      <article class="post">
+  <h1>SQL vs NoSQL Khác biệt là gì và được sử dụng khi nào ?</h1>
+
+  <div class="entry">
+    <p>Hôm nay chúng ta cùng nhau tìm hiểu về sql và nosql xem chúng là gì, và sự khác nhau giữa chúng là gì nhé.</p>
+
+<p>Các phần chính trong bài viết</p>
+
+<p><strong>1. SQL và NoSQL là gì ?</strong></p>
+
+<p><strong>2. Sự khác nhau giữa SQL và NoSQL là gì ?</strong></p>
+
+<p><strong>3. Khi nào thì sử dụng SQL hay NoSQL ?</strong></p>
+
+<p>Nội dung chi tiết:</p>
+
+<h2 id="1-sql-và-nosql-là-gì-">1. SQL và NoSQL là gì ?</h2>
+
+<ul>
+  <li>
+    <p>SQL (Structured Query Language) là ngôn ngữ truy vấn có cấu trúc, là dạng database có quan hệ và mối quan hệ được thể hiện qua dạng bảng. SQL được sử dụng hiệu quả để chèn chèn, tìm kiếm, cập nhật, xóa bản ghi trong database. Các database SQL thường sử dụng là MySQL, Oracle, Ms SQL Server, Sybase, etc…</p>
+  </li>
+  <li>
+    <p>NoSQL (Non SQL or Not Only SQL) được phát triển từ cuối những năm 2000 với trọng tâm là khả năng mở rộng quy mô (scale), truy vấn nhanh, cho phép thay đổi ứng dụng thường xuyên và giúp lập trình đơn giản hơn cho các nhà phát triển. NoSQL không yêu cầu một schema cố định và nó được sử dụng cho các kho dữ liệu phân tán với nhu cầu lưu trữ dữ liệu lớn, ứng dụng thời gian thực.</p>
+  </li>
+</ul>
+
+<h2 id="2-sự-khác-nhau-giữa-sql-và-nosql-là-gì-">2. Sự khác nhau giữa SQL và NoSQL là gì ?</h2>
+
+<p><strong>Những điểm khác nhau chính</strong></p>
+
+<ul>
+  <li>SQL làn cơ sở dữ liệu quan hệ trong khi nosql là cơ sở dữ liệu phi quan hệ hoặc phân tán.</li>
+  <li>SQL là cơ sở dữ liệu dạng bảng, còn nosql là cơ sở dữ liệu bao gồm dạng document, cặp key-value, graph.</li>
+  <li>SQL có khả năng scale theo chiều dọc còn nosql mở rộng theo chiều ngang.</li>
+  <li>
+    <p>SQL sử dụng với dữ liệu có cấu trúc được định nghĩa sẵn, còn nosql có thể sử dụng với dữ liệu phi cấu trúc.</p>
+  </li>
+  <li>Chi tiết:</li>
+</ul>
+
+<table>
+  <thead>
+    <tr>
+      <th>Parameters</th>
+      <th>SQL</th>
+      <th>NoSQL</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Definition</td>
+      <td>SQL là cơ sở dữ liệu quan hệ</td>
+      <td>NoSQL là cơ sở dữ liệu phi quan hệ</td>
+    </tr>
+    <tr>
+      <td>Design for</td>
+      <td>SQL truyền thống sử dụng truy vấn để phân tích dữ liệu. Thường được sử dụng cho các hệ thống OLAP</td>
+      <td>NoSQL được phát triển để đáp ứng nhu cầu của dữ liệu lớn, đa dạng của các ứng dụng hiện đại</td>
+    </tr>
+    <tr>
+      <td>Query Language</td>
+      <td>Ngôn ngữ truy vấn có cấu trúc</td>
+      <td>Không có ngôn ngữ truy vấn</td>
+    </tr>
+    <tr>
+      <td>Type</td>
+      <td>SQL có kiểu dữ liệu dạng bảng</td>
+      <td>NoSQL có kiểu dữ liệu đa dạng như document, cặp key-value, graph</td>
+    </tr>
+    <tr>
+      <td>Schema</td>
+      <td>SQL cần phải có schema định nghĩa sẵn trước khi sử dụng</td>
+      <td>NoSQL có schema động để sử dụng với dữ liệu phi cấu trúc</td>
+    </tr>
+    <tr>
+      <td>Khả năng mở rộng</td>
+      <td>SQL databases có khả năng mở rộng theo chiều dọc</td>
+      <td>NoSQL có khả năng mở rộng theo chiều ngang</td>
+    </tr>
+    <tr>
+      <td>Exampes</td>
+      <td>Oracle, Postgres, MS SQL</td>
+      <td>MongoDB, Redis, Neo4j, Cassandra, Hbase</td>
+    </tr>
+    <tr>
+      <td>Phù hợp nhất</td>
+      <td>Phù hợp với các nghiệp vụ chuyên sâu, phức tạp, mối quan hệ giữa các records, tables</td>
+      <td>Không phù hợp với truy vấn phức tạp</td>
+    </tr>
+    <tr>
+      <td>Lưu trữ dữ liệu phân cấp</td>
+      <td>SQL không phù hợp với dữ liệu phân cấp</td>
+      <td>Phù hợp hơn với dữ liệu phân cấp vì nó hỗ trợ định dạng key-value (json)</td>
+    </tr>
+    <tr>
+      <td><a href="http://tiepvut.blogspot.com/2016/07/nhat-quan-du-lieu-trong-nosql.html">Tính nhất quán</a></td>
+      <td>Nó phải được cấu hình để có tính nhất quán mạnh mẽ</td>
+      <td>Nó tùy thuộc vào loại DBMS vì một số cung cấp tính nhất quán như mongoDB, trong khi có cái khác lại chỉ cung cấp tính nhất quán cuối cùng như cassandra</td>
+    </tr>
+    <tr>
+      <td>Best Used for</td>
+      <td>SQL là lựa chọn đúng đắn để giải quyết các vấn đề <a href="https://vi.wikipedia.org/wiki/ACID">ACID</a></td>
+      <td>NoSQL được sử dụng tốt nhất để giải quyết vấn đề dữ liệu lớn</td>
+    </tr>
+    <tr>
+      <td>Important</td>
+      <td>Nên được sử dụng khi tính hợp lệ vô cùng quan trọng</td>
+      <td>Sử dụng khi dữ liệu nhanh quan trọng hơn dữ liệu chính xác</td>
+    </tr>
+    <tr>
+      <td>Best Option</td>
+      <td>Khi bạn cần hỗ trợ các try vấn động, phức tạp</td>
+      <td>Sử dụng khi bạn cần mở rộng quy mô dựa trên yêu cầu thay đổi</td>
+    </tr>
+    <tr>
+      <td>Best Features</td>
+      <td>Hỗ trợ đa nền tảng, bảo mật và miễn phí</td>
+      <td>Dễ dàng sử dụng, hiệu suât cao và công cụ linh hoạt</td>
+    </tr>
+  </tbody>
+</table>
+
+<h2 id="3-khi-nào-thì-sử-dụng-sql-hay-nosql-">3. Khi nào thì sử dụng SQL hay NoSQL ?</h2>
+
+<h3 id="31-khi-nào-sử-dụng-sql">3.1 Khi nào sử dụng SQL?</h3>
+
+<ul>
+  <li>Được ưu tiên khi muốn thực hiện join các bảng hay các câu truy vấn phức tạp</li>
+  <li>Thương được sử dụng với các giao dịch tài chính</li>
+  <li>Kiểu dữ liệu đã có cấu trúc định dạng sẵn</li>
+  <li>Sử dụng phù hợp với OLAP</li>
+</ul>
+
+<h3 id="32-khi-nào-sử-dụng-nosql-">3.2 Khi nào sử dụng NoSQL ?</h3>
+
+<ul>
+  <li>Sử dụng với dữ liệu lớn vì khả năng scale dễ dàng.</li>
+  <li>Sử dụng với các dữ liệu phân cấp hoặc dữ liệu phi cấu trúc</li>
+</ul>
+
+<h1 id="tư-liệu-tham-khảo">Tư liệu tham khảo:</h1>
+
+<ul>
+  <li><a href="https://www.guru99.com/sql-vs-nosql.html">https://www.guru99.com/sql-vs-nosql.html</a></li>
+</ul>
+
+  </div>
+
+  <div class="date">
+    Written on September  5, 2021
+  </div>
+
+  
+<div class="comments">
+	<div id="disqus_thread"></div>
+	<script type="text/javascript">
+
+	    var disqus_shortname = 'luongvantuananh-github-io';
+
+	    (function() {
+	        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+	        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+	        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+	    })();
+
+	</script>
+	<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+</div>
+
+</article>
+
+    </div>
+
+    <div class="wrapper-footer">
+      <div class="container">
+        <footer class="footer">
+          
+<a href="mailto:tuananhhd5596@gmail.com"><i class="svg-icon email"></i></a>
+<a href="https://www.facebook.com/TraDa"><i class="svg-icon facebook"></i></a>
+
+<a href="https://github.com/luongvantuananh"><i class="svg-icon github"></i></a>
+
+
+
+
+<a href="https://www.twitter.com/jekyllrb"><i class="svg-icon twitter"></i></a>
+
+
+
+        </footer>
+      </div>
+    </div>
+
+    
+
+  </body>
+</html>
