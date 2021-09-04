@@ -42,19 +42,19 @@ Nội dung chi tiết:
 | Parameters | SQL | NoSQL|
 | -----------|-----|------|
 | Definition      | SQL là cơ sở dữ liệu quan hệ       | NoSQL là cơ sở dữ liệu phi quan hệ|
-| Design for        | SQL truyền thống sử dụng truy vấn để phân tích dữ liệu. Thường được sử dụng cho các hệ thống OLAP        |NoSQL được phát triển để đáp ứng nhu cầu của dữ liệu lớn, đa dạng của các ứng dụng hiện đại |
-|Query Language|Ngôn ngữ truy vấn có cấu trúc| Không có ngôn ngữ truy vấn|
-|Type|SQL có kiểu dữ liệu dạng bảng|NoSQL có kiểu dữ liệu đa dạng như document, cặp key-value, graph|
-|Schema|SQL cần phải có schema định nghĩa sẵn trước khi sử dụng|NoSQL có schema động để sử dụng với dữ liệu phi cấu trúc|
-|Khả năng mở rộng|SQL databases có khả năng mở rộng theo chiều dọc|NoSQL có khả năng mở rộng theo chiều ngang|
-|Exampes| Oracle, Postgres, MS SQL|MongoDB, Redis, Neo4j, Cassandra, Hbase|
-|Phù hợp nhất |Phù hợp với các nghiệp vụ chuyên sâu, phức tạp, mối quan hệ giữa các records, tables|Không phù hợp với truy vấn phức tạp|
-|Lưu trữ dữ liệu phân cấp|SQL không phù hợp với dữ liệu phân cấp|Phù hợp hơn với dữ liệu phân cấp vì nó hỗ trợ định dạng key-value (json)|
-|[Tính nhất quán](http://tiepvut.blogspot.com/2016/07/nhat-quan-du-lieu-trong-nosql.html)|Nó phải được cấu hình để có tính nhất quán mạnh mẽ|Nó tùy thuộc vào loại DBMS vì một số cung cấp tính nhất quán như mongoDB, trong khi có cái khác lại chỉ cung cấp tính nhất quán cuối cùng như cassandra|
-|Best Used for|SQL là lựa chọn đúng đắn để giải quyết các vấn đề [ACID](https://vi.wikipedia.org/wiki/ACID)|NoSQL được sử dụng tốt nhất để giải quyết vấn đề dữ liệu lớn|
-|Important|Nên được sử dụng khi tính hợp lệ vô cùng quan trọng|Sử dụng khi dữ liệu nhanh quan trọng hơn dữ liệu chính xác|
-|Best Option|Khi bạn cần hỗ trợ các try vấn động, phức tạp|Sử dụng khi bạn cần mở rộng quy mô dựa trên yêu cầu thay đổi|
-|Best Features|Hỗ trợ đa nền tảng, bảo mật và miễn phí|Dễ dàng sử dụng, hiệu suât cao và công cụ linh hoạt|
+| Design for        | SQL truyền thống sử dụng truy vấn để phân tích dữ liệu. Thường được sử dụng cho các hệ thống OLAP        | NoSQL được phát triển để đáp ứng nhu cầu của dữ liệu lớn, đa dạng của các ứng dụng hiện đại |
+| Query Language| Ngôn ngữ truy vấn có cấu trúc| Không có ngôn ngữ truy vấn|
+| Type|SQL có kiểu dữ liệu dạng bảng| NoSQL có kiểu dữ liệu đa dạng như document, cặp key-value, graph|
+| Schema| SQL cần phải có schema định nghĩa sẵn trước khi sử dụng| NoSQL có schema động để sử dụng với dữ liệu phi cấu trúc|
+| Khả năng mở rộng| SQL databases có khả năng mở rộng theo chiều dọc| NoSQL có khả năng mở rộng theo chiều ngang|
+| Exampes| Oracle, Postgres, MS SQL| MongoDB, Redis, Neo4j, Cassandra, Hbase|
+| Phù hợp nhất |Phù hợp với các nghiệp vụ chuyên sâu, phức tạp, mối quan hệ giữa các records, tables| Không phù hợp với truy vấn phức tạp|
+| Lưu trữ dữ liệu phân cấp| SQL không phù hợp với dữ liệu phân cấp| Phù hợp hơn với dữ liệu phân cấp vì nó hỗ trợ định dạng key-value (json)|
+| [Tính nhất quán](http://tiepvut.blogspot.com/2016/07/nhat-quan-du-lieu-trong-nosql.html)| Nó phải được cấu hình để có tính nhất quán mạnh mẽ| Nó tùy thuộc vào loại DBMS vì một số cung cấp tính nhất quán như mongoDB, trong khi có cái khác lại chỉ cung cấp tính nhất quán cuối cùng như cassandra|
+| Best Used for| SQL là lựa chọn đúng đắn để giải quyết các vấn đề [ACID](https://vi.wikipedia.org/wiki/ACID)|NoSQL được sử dụng tốt nhất để giải quyết vấn đề dữ liệu lớn|
+| Important| Nên được sử dụng khi tính hợp lệ vô cùng quan trọng| Sử dụng khi dữ liệu nhanh quan trọng hơn dữ liệu chính xác|
+| Best Option| Khi bạn cần hỗ trợ các try vấn động, phức tạp| Sử dụng khi bạn cần mở rộng quy mô dựa trên yêu cầu thay đổi|
+| Best Features| Hỗ trợ đa nền tảng, bảo mật và miễn phí|Dễ dàng sử dụng, hiệu suât cao và công cụ linh hoạt|
 {: .table-striped .table}
 
 ## 3. Khi nào thì sử dụng SQL hay NoSQL ?
