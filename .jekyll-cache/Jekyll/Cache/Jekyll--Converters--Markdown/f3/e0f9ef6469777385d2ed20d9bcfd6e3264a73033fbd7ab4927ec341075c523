@@ -1,0 +1,37 @@
+I"d<p>Bạn đang cần xử lý một lượng lớn khối lượng dữ liệu và muốn biết ngoài kia thế giới
+sử dụng công cụ gì để làm việc đó. Thì đây là thứ bạn cần - Spark. Nếu học về bigdata 
+thì hầu như bắt buộc phải biết Spark. Vậy nó là gì và làm được gì ? Hôm nay ta sẽ cùng
+nhau tìm hiểu điều đó. Let’s go !!!</p>
+
+<p align="center">
+  <img src="/images/spark/spark.jpg" />
+</p>
+
+<ol>
+  <li>Spark là gì ?</li>
+  <li>Tốc độ của spark
+    <ul>
+      <li>Xử lý dữ liệu lớn</li>
+      <li>Được phát triển bởi phòng AMPlab nhằm nâng cao performance của
+Hadoop</li>
+      <li>Tốc độ cao nhờ kỹ thuật cluster, computing</li>
+      <li>phát tiển trên nền tảng Hadoop MapReduce</li>
+      <li>việc tính toán đựoc thực hiện trên RAM</li>
+      <li>thực hiện trên RAM thường nhanh hơn 10-100 lần so với disk hay network</li>
+      <li>Spark có 5 thành phần : Spark Core, Spark Streaming , Spark SQL, MLlib và GraphX.</li>
+      <li>Spark Core đảm nhận vai trò tính toán và xử lý trong bộ nhớ đồng thời tham chiếu các dữ liệu được lưu trữ 
+tại các hệ thống lưu trữ ngoài.</li>
+    </ul>
+  </li>
+</ol>
+
+<p>Spark nhanh hơn các phương pháp tiếp cận truyền thống với bigdata như phương pháp MapReduce cổ điển. 
+Bí mật của Spark để nhanh hơn đó là Spark chạy trên RAM điều đó cho phép xử lý nhanh hơn là dữ liệu trên ổ đĩa</p>
+
+<p>Spark rất general vì được sử dung cho nhiều thứ</p>
+
+<h1 id="tài-liệu-tham-khảo">Tài liệu tham khảo</h1>
+<ul>
+  <li><a href="https://searchdatamanagement.techtarget.com/definition/Apache-Spark">https://searchdatamanagement.techtarget.com/definition/Apache-Spark</a></li>
+</ul>
+:ET
