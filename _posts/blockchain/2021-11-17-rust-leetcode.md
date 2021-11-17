@@ -12,17 +12,17 @@ mình sưu tầm được, nếu có ý kiến đóng góp hãy để lại bìn
 
 # Danh sách các bài tập đã làm: 
 
-1. [Two Sum](#twosum)
+1- [Two Sum](#twosum)
 
-9. [Palindrome Number](palindromenumber)
+9- [Palindrome Number](palindromenumber)
 
-13. [Roman to Integer](romantointeger)
+13- [Roman to Integer](romantointeger)
 
-14. [Longest Common Prefix](longestcommonprefix)
+14- [Longest Common Prefix](longestcommonprefix)
 
 # 1. Two Sum <a name="twosum"></a>
 
-***Cho một mảng interges `nums` and 1 số nguyên `target`, trả về vị trí của 2 số trong mảng có tổng bằng 6 ***
+***Cho một mảng interges `nums` and 1 số nguyên `target`, trả về vị trí của 2 số trong mảng có tổng bằng 6***
 
 **Example:**{: style="color: orange; opacity: 0.80;" }
 
@@ -178,3 +178,8 @@ impl Solution {
 }
 
 ```
+
+
+# Tài liệu 
+
+- https://leetcode.com/
