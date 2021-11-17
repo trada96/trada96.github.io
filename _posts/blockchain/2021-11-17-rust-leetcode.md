@@ -14,11 +14,11 @@ mình sưu tầm được, nếu có ý kiến đóng góp hãy để lại bìn
 
 1- [Two Sum](#twosum)
 
-9- [Palindrome Number](palindromenumber)
+9- [Palindrome Number](#palindromenumber)
 
-13- [Roman to Integer](romantointeger)
+13- [Roman to Integer](#romantointeger)
 
-14- [Longest Common Prefix](longestcommonprefix)
+14- [Longest Common Prefix](#longestcommonprefix)
 
 # 1. Two Sum <a name="twosum"></a>
 
