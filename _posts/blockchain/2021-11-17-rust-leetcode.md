@@ -87,7 +87,7 @@ impl Solution {
 
 # 13. Roman to Integer <a name="romantointeger"></a>
 
-Chữ số Roman được đại diện bằng 7 ký tự khác nhau: I, V, X, L, C, D và M.
+***Chữ số Roman được đại diện bằng 7 ký tự khác nhau: I, V, X, L, C, D và M.***
 
 ```markdown
 Symbol       Value
@@ -148,8 +148,8 @@ impl Solution {
 
 # 14. Longest Common Prefix <a name="longestcommonprefix"></a>
 
-Viết 1 function trả về chuỗi prefix chung lớn nhất của 1 mảng string.
-Nếu không có prefix chung, trả về "".
+***Viết 1 function trả về chuỗi prefix chung lớn nhất của 1 mảng string.
+Nếu không có prefix chung, trả về "".***
 
 **Example**{: style="color: orange; opacity: 0.80;" }
 ```markdown
