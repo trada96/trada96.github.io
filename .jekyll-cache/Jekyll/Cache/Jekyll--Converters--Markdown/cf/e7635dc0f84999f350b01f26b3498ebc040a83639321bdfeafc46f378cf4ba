@@ -1,0 +1,169 @@
+I"1;<p>Đây là chuyên mục cùng học Rust với mình, mình biết Rust cũng được một thời gian nhưng bây giờ mới thực sự học về nó. 
+Để trau dồi kiến thức mình sẽ luyện tập với Rust, các đáp án dưới đây chỉ mang tính tham khảo, có thể do mình làm hoặc 
+mình sưu tầm được, nếu có ý kiến đóng góp hãy để lại bình luận bên dưới.</p>
+
+<h1 id="danh-sách-các-bài-tập-đã-làm">Danh sách các bài tập đã làm:</h1>
+
+<p>1- <a href="#twosum">Two Sum</a></p>
+
+<p>9- <a href="#palindromenumber">Palindrome Number</a></p>
+
+<p>13- <a href="#romantointeger">Roman to Integer</a></p>
+
+<p>14- <a href="#longestcommonprefix">Longest Common Prefix</a></p>
+
+<h1 id="1-two-sum-">1. Two Sum <a name="twosum"></a></h1>
+
+<p><strong><em>Cho một mảng interges <code class="language-plaintext highlighter-rouge">nums</code> and 1 số nguyên <code class="language-plaintext highlighter-rouge">target</code>, trả về vị trí của 2 số trong mảng có tổng bằng 6</em></strong></p>
+
+<p><strong style="color: orange; opacity: 0.80;">Example:</strong></p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Input: nums = [2, 7, 11, 15], target = 9
+Output: [0, 1] // Because nums[0] + nums[1] == 9, =&gt; Return [0, 1]
+</code></pre></div></div>
+
+<p><strong style="color: red; opacity: 0.50;">Answer</strong></p>
+
+<div class="language-rust highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">use</span> <span class="nn">std</span><span class="p">::</span><span class="nn">collections</span><span class="p">::</span><span class="n">HashMap</span><span class="p">;</span>
+
+<span class="k">impl</span> <span class="n">Solution</span> <span class="p">{</span>
+    <span class="k">pub</span> <span class="k">fn</span> <span class="nf">two_sum</span><span class="p">(</span><span class="n">nums</span><span class="p">:</span> <span class="nb">Vec</span><span class="o">&lt;</span><span class="nb">i32</span><span class="o">&gt;</span><span class="p">,</span> <span class="n">target</span><span class="p">:</span> <span class="nb">i32</span><span class="p">)</span> <span class="k">-&gt;</span> <span class="nb">Vec</span><span class="o">&lt;</span><span class="nb">i32</span><span class="o">&gt;</span> <span class="p">{</span>
+        
+        <span class="k">let</span> <span class="k">mut</span> <span class="n">data</span><span class="p">:</span> <span class="n">HashMap</span><span class="o">&lt;</span><span class="nb">i32</span><span class="p">,</span> <span class="nb">i32</span><span class="o">&gt;</span> <span class="o">=</span> <span class="nn">HashMap</span><span class="p">::</span><span class="nf">new</span><span class="p">();</span>
+        
+        <span class="k">for</span> <span class="n">i</span> <span class="n">in</span> <span class="mi">0</span><span class="o">..</span><span class="n">nums</span><span class="nf">.len</span><span class="p">(){</span>
+            <span class="k">match</span> <span class="n">data</span><span class="nf">.get</span><span class="p">(</span><span class="o">&amp;</span><span class="n">nums</span><span class="p">[</span><span class="n">i</span><span class="p">]){</span>
+                <span class="nf">Some</span><span class="p">(</span><span class="o">&amp;</span><span class="n">x</span><span class="p">)</span> <span class="k">=&gt;</span> <span class="k">return</span> <span class="nd">vec!</span><span class="p">[</span><span class="n">x</span><span class="p">,</span> <span class="n">i</span> <span class="k">as</span> <span class="nb">i32</span><span class="p">],</span>
+                <span class="nb">None</span> <span class="k">=&gt;</span> <span class="n">data</span><span class="nf">.insert</span><span class="p">(</span><span class="n">target</span><span class="o">-</span><span class="n">nums</span><span class="p">[</span><span class="n">i</span><span class="p">],</span> <span class="n">i</span> <span class="k">as</span> <span class="nb">i32</span><span class="p">),</span>
+            <span class="p">};</span>
+    <span class="p">}</span>
+    
+    <span class="k">return</span> <span class="nd">vec!</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">]</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p>Note: Khởi tạo 1 dictionary, chạy vòng lặp qua tất cả giá trị của Vec <code class="language-plaintext highlighter-rouge">nums</code>, nếu giá trị <code class="language-plaintext highlighter-rouge">nums[i]</code>
+có trong dictionary thì trả về kết quả, còn không thì insert giá trị <code class="language-plaintext highlighter-rouge">target - nums[i]</code> vào dictionary</p>
+
+<h1 id="9-palindrome-number-">9. Palindrome Number <a name="palindromenumber"></a></h1>
+
+<p><strong><em>Cho 1 số integer x, trả về true nếu là số palindrome</em></strong></p>
+
+<p><strong style="color: orange; opacity: 0.80;">Example</strong></p>
+
+<div class="language-markdown highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Input: x = 121, x = 12321, x = 11
+Ouput: true 
+Input: x = 123, 2342
+Ouput: false
+</code></pre></div></div>
+
+<p><strong style="color: red; opacity: 0.50;">Answer</strong></p>
+
+<div class="language-rust highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">impl</span> <span class="n">Solution</span> <span class="p">{</span>
+    <span class="k">pub</span> <span class="k">fn</span> <span class="nf">is_palindrome</span><span class="p">(</span><span class="n">x</span><span class="p">:</span> <span class="nb">i32</span><span class="p">)</span> <span class="k">-&gt;</span> <span class="nb">bool</span> <span class="p">{</span>
+        <span class="k">let</span> <span class="n">x_str</span><span class="p">:</span> <span class="nb">String</span> <span class="o">=</span> <span class="n">x</span><span class="nf">.to_string</span><span class="p">();</span>
+        
+        <span class="k">let</span> <span class="n">revert</span><span class="p">:</span> <span class="nb">String</span> <span class="o">=</span> <span class="n">x_str</span><span class="nf">.chars</span><span class="p">()</span><span class="nf">.rev</span><span class="p">()</span><span class="py">.collect</span><span class="p">::</span><span class="o">&lt;</span><span class="nb">String</span><span class="o">&gt;</span><span class="p">();</span>
+        
+        <span class="k">return</span> <span class="n">x_str</span> <span class="o">==</span> <span class="n">revert</span><span class="p">;</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+
+</code></pre></div></div>
+
+<h1 id="13-roman-to-integer-">13. Roman to Integer <a name="romantointeger"></a></h1>
+
+<p><strong><em>Chữ số Roman được đại diện bằng 7 ký tự khác nhau: I, V, X, L, C, D và M.</em></strong></p>
+
+<div class="language-markdown highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Symbol       Value
+I             1
+V             5
+X             10
+L             50
+C             100
+D             500
+M             1000
+</code></pre></div></div>
+
+<p>Cho 1 chữ số Roman, chuyển đổi sang integer</p>
+
+<p><strong style="color: orange; opacity: 0.80;">Example</strong></p>
+
+<div class="language-markdown highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Input: s = "XIX"
+Ouput: 19
+</code></pre></div></div>
+
+<p><strong style="color: red; opacity: 0.50;">Answer</strong></p>
+
+<div class="language-rust highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">use</span> <span class="nn">std</span><span class="p">::</span><span class="nn">collections</span><span class="p">::</span><span class="n">HashMap</span><span class="p">;</span>
+
+<span class="k">impl</span> <span class="n">Solution</span> <span class="p">{</span>
+    <span class="k">pub</span> <span class="k">fn</span> <span class="nf">roman_to_int</span><span class="p">(</span><span class="n">s</span><span class="p">:</span> <span class="nb">String</span><span class="p">)</span> <span class="k">-&gt;</span> <span class="nb">i32</span> <span class="p">{</span>
+        
+        <span class="k">let</span> <span class="n">values</span> <span class="o">=</span> <span class="n">s</span><span class="nf">.chars</span><span class="p">()</span><span class="nf">.map</span><span class="p">(|</span><span class="n">x</span><span class="p">|</span> <span class="k">match</span> <span class="n">x</span> <span class="p">{</span>
+            <span class="sc">'I'</span> <span class="k">=&gt;</span> <span class="mi">1</span><span class="p">,</span>
+            <span class="sc">'V'</span> <span class="k">=&gt;</span> <span class="mi">5</span><span class="p">,</span>
+            <span class="sc">'X'</span> <span class="k">=&gt;</span> <span class="mi">10</span><span class="p">,</span>
+            <span class="sc">'L'</span> <span class="k">=&gt;</span> <span class="mi">50</span><span class="p">,</span>
+            <span class="sc">'C'</span> <span class="k">=&gt;</span> <span class="mi">100</span><span class="p">,</span>
+            <span class="sc">'D'</span> <span class="k">=&gt;</span> <span class="mi">500</span><span class="p">,</span>
+            <span class="sc">'M'</span> <span class="k">=&gt;</span> <span class="mi">1000</span><span class="p">,</span>
+            <span class="mi">_</span> <span class="k">=&gt;</span> <span class="mi">0</span><span class="p">,</span>
+        
+        <span class="p">})</span><span class="py">.collect</span><span class="p">::</span><span class="o">&lt;</span><span class="nb">Vec</span><span class="o">&lt;</span><span class="nb">i32</span><span class="o">&gt;&gt;</span><span class="p">();</span>
+        
+        <span class="k">let</span> <span class="k">mut</span> <span class="n">sum</span> <span class="o">=</span> <span class="n">values</span><span class="p">[</span><span class="mi">0</span><span class="p">];</span>
+        
+        <span class="k">for</span> <span class="n">i</span> <span class="n">in</span> <span class="mi">0</span><span class="o">..</span><span class="n">values</span><span class="nf">.len</span><span class="p">()</span> <span class="o">-</span><span class="mi">1</span> <span class="p">{</span>
+            <span class="k">if</span> <span class="n">values</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">&gt;=</span> <span class="n">values</span><span class="p">[</span><span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="p">]{</span>
+                <span class="n">sum</span> <span class="o">+=</span> <span class="n">values</span><span class="p">[</span><span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="p">];</span> <span class="c">// XI = X + I</span>
+            <span class="p">}</span><span class="k">else</span> <span class="p">{</span>
+                <span class="n">sum</span> <span class="o">+=</span> <span class="n">values</span><span class="p">[</span><span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="p">]</span> <span class="o">-</span> <span class="mi">2</span><span class="o">*</span><span class="n">values</span><span class="p">[</span><span class="n">i</span><span class="p">];</span> <span class="c">//XIX = (X+I) - I +X - I </span>
+            <span class="p">}</span>
+        <span class="p">}</span>
+        
+        <span class="k">return</span> <span class="n">sum</span>
+            
+<span class="p">}</span>   
+
+<span class="p">}</span>
+</code></pre></div></div>
+
+<h1 id="14-longest-common-prefix-">14. Longest Common Prefix <a name="longestcommonprefix"></a></h1>
+
+<p><strong><em>Viết 1 function trả về chuỗi prefix chung lớn nhất của 1 mảng string.
+Nếu không có prefix chung, trả về “”.</em></strong></p>
+
+<p><strong style="color: orange; opacity: 0.80;">Example</strong></p>
+<div class="language-markdown highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Input: strs = ["flower","flow","flight"]
+Output: "fl"
+</code></pre></div></div>
+
+<p><strong style="color: red; opacity: 0.50;">Answer</strong></p>
+
+<div class="language-rust highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">impl</span> <span class="n">Solution</span> <span class="p">{</span>
+    <span class="k">pub</span> <span class="k">fn</span> <span class="nf">longest_common_prefix</span><span class="p">(</span><span class="n">strs</span><span class="p">:</span> <span class="nb">Vec</span><span class="o">&lt;</span><span class="nb">String</span><span class="o">&gt;</span><span class="p">)</span> <span class="k">-&gt;</span> <span class="nb">String</span> <span class="p">{</span>
+        
+        <span class="k">let</span> <span class="n">min_length</span> <span class="o">=</span> <span class="n">strs</span><span class="nf">.iter</span><span class="p">()</span><span class="nf">.map</span><span class="p">(|</span><span class="n">x</span><span class="p">|</span> <span class="n">x</span><span class="nf">.len</span><span class="p">())</span><span class="nf">.min</span><span class="p">()</span><span class="nf">.unwrap</span><span class="p">();</span>
+
+        <span class="k">for</span> <span class="n">i</span> <span class="nf">in</span> <span class="p">(</span><span class="mi">1</span><span class="o">..</span><span class="n">min_length</span><span class="o">+</span><span class="mi">1</span><span class="p">)</span><span class="nf">.rev</span><span class="p">()</span> <span class="p">{</span>
+            <span class="k">let</span> <span class="n">prefix</span> <span class="o">=</span> <span class="o">&amp;</span><span class="n">strs</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="mi">0</span><span class="o">..</span><span class="n">i</span><span class="p">];</span>
+            <span class="k">if</span> <span class="n">strs</span><span class="nf">.iter</span><span class="p">()</span><span class="nf">.all</span><span class="p">(|</span><span class="n">x</span><span class="p">|</span> <span class="n">x</span><span class="nf">.find</span><span class="p">(</span><span class="n">prefix</span><span class="p">)</span> <span class="o">==</span> <span class="nf">Some</span><span class="p">(</span><span class="mi">0</span><span class="p">)){</span>
+                <span class="k">return</span> <span class="n">prefix</span><span class="nf">.to_string</span><span class="p">();</span>
+            <span class="p">}</span>
+
+            <span class="p">}</span>
+
+        <span class="nn">String</span><span class="p">::</span><span class="nf">new</span><span class="p">()</span>
+        <span class="p">}</span>
+<span class="p">}</span>
+
+</code></pre></div></div>
+
+<h1 id="tài-liệu">Tài liệu</h1>
+
+<ul>
+  <li>https://leetcode.com/</li>
+</ul>
+:ET
