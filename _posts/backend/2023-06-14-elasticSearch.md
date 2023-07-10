@@ -12,7 +12,6 @@ Có rất nhiều công cụ phải trải qua khi làm backend như mysql, post
 ## 1. ElasticSearch là gì?
 
 -   ElasticSearch là một công cụ tìm kiếm và phân tích dũ liệu mã nguồn mở, được phát triển bởi công ty Elastic. Nó được thiết kế để xử lý và truy vấn tập dữ liệu lớn, phức tạp và có cấu trúc khác nhau.
-
 -   ES là Search Engine số 1 thế giới. Được viết bằng Java.
 -   Phiên bản đầu tiên ra đời vào năm 2010.
 -   Chung hệ sinh thái cùng Kibana, Beat, Logstash, ...
@@ -38,7 +37,7 @@ Có rất nhiều công cụ phải trải qua khi làm backend như mysql, post
 
 ## 3. Dữ liệu được xử lý thế nào trong Elasticsearch ?
 
-    -   Elastic Search sử dụng Inverted Index ( chỉ mục đảo ngược là cơ sở dữ liệu ánh xạ tư nội dung đến vị trí trong bản ghi)
+Elastic Search sử dụng Inverted Index ( chỉ mục đảo ngược là cơ sở dữ liệu ánh xạ tư nội dung đến vị trí trong bản ghi)
 
 <p align="center">
   <img src="/images/backend/ElasticSeach/index.webp" />
@@ -50,7 +49,7 @@ Khi có query full-text search, ví dụ tìm xem document nào chứa "blue sky
 
 ## 4. Thuật toán tìm kiếm Term trong Inverted Index là gì ?
 
-        * Thuật toán tìm kiếm term trong inverted Index được sử dụng bởi ES khá đơn giản và hiệu quả. Các bước chính của thuật toán như sau:
+**Thuật toán tìm kiếm term trong inverted Index được sử dụng bởi ES khá đơn giản và hiệu quả. Các bước chính của thuật toán như sau:**
 
 -   Bước 1: Tách các term: Văn bản cần tìm kiếm được tách thành các term riêng lẻ. Các term có thể là các từ đơn, cụm từ hoặc ký tự đặc biệt.
 
